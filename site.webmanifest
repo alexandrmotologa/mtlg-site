@@ -1,0 +1,16 @@
+{
+  "name": "Alexandr Motologa — Software Engineer & Builder",
+  "short_name": "Alexandr Motologa",
+  "description": "Personal engineering portfolio and hub of Alexandr Motologa (MTLG). Software Engineer specializing in developer tooling, full-stack web applications, AI automation, and indie products.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07080d",
+  "theme_color": "#07080d",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="siteOgBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07080d" />
+      <stop offset="60%" stop-color="#0e1222" />
+      <stop offset="100%" stop-color="#050609" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#cbd5e1" />
+      <stop offset="100%" stop-color="#94a3b8" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <radialGradient id="glowTopRight" cx="85%" cy="20%" r="45%">
+      <stop offset="0%" stop-color="rgba(99, 102, 241, 0.3)" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <radialGradient id="glowBottomLeft" cx="15%" cy="80%" r="45%">
+      <stop offset="0%" stop-color="rgba(6, 182, 212, 0.25)" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#siteOgBg)" />
+  <rect width="1200" height="630" fill="url(#glowTopRight)" />
+  <rect width="1200" height="630" fill="url(#glowBottomLeft)" />
+
+  <!-- Grid overlay -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
+    <line x1="0" y1="100" x2="1200" y2="100" />
+    <line x1="0" y1="200" x2="1200" y2="200" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="0" y1="400" x2="1200" y2="400" />
+    <line x1="0" y1="500" x2="1200" y2="500" />
+    <line x1="200" y1="0" x2="200" y2="630" />
+    <line x1="400" y1="0" x2="400" y2="630" />
+    <line x1="600" y1="0" x2="600" y2="630" />
+    <line x1="800" y1="0" x2="800" y2="630" />
+    <line x1="1000" y1="0" x2="1000" y2="630" />
+  </g>
+
+  <!-- Card Frame -->
+  <rect x="80" y="70" width="1040" height="490" rx="24" fill="rgba(18, 21, 34, 0.65)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="2" />
+
+  <!-- Badge -->
+  <rect x="130" y="120" width="340" height="42" rx="21" fill="rgba(16, 185, 129, 0.15)" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1.5" />
+  <circle cx="152" cy="141" r="5" fill="#34d399" />
+  <text x="170" y="147" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="15" font-weight="600" fill="#6ee7b7" letter-spacing="1">SOFTWARE ENGINEER &amp; ARCHITECT</text>
+
+  <!-- Title -->
+  <text x="130" y="235" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="64" font-weight="800" fill="url(#textGrad)" letter-spacing="-1.5">Alexandr Motologa</text>
+
+  <!-- Subtitle -->
+  <text x="130" y="295" font-family="'JetBrains Mono', monospace" font-size="22" font-weight="600" fill="url(#accentGrad)">&lt;Full-Stack &amp; AI Developer // No-Code Specialist&gt;</text>
+
+  <!-- Description -->
+  <text x="130" y="360" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="20" fill="#94a3b8" width="800">
+    Engineering developer tools, high-velocity web platforms, and AI automation systems.
+  </text>
+  <text x="130" y="395" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="20" fill="#94a3b8">
+    Creator of SnapFrame.store, Oneira Space &amp; Founder of MTLG Labs.
+  </text>
+
+  <!-- Footer Tags -->
+  <rect x="130" y="460" width="130" height="38" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" />
+  <text x="195" y="484" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600" fill="#cbd5e1" text-anchor="middle">TypeScript</text>
+
+  <rect x="275" y="460" width="120" height="38" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" />
+  <text x="335" y="484" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600" fill="#cbd5e1" text-anchor="middle">Bubble.io</text>
+
+  <rect x="410" y="460" width="140" height="38" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" />
+  <text x="480" y="484" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600" fill="#cbd5e1" text-anchor="middle">AI &amp; LLMs</text>
+
+  <rect x="565" y="460" width="130" height="38" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" />
+  <text x="630" y="484" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600" fill="#cbd5e1" text-anchor="middle">DevTools</text>
+
+  <text x="1060" y="485" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#38bdf8" text-anchor="end">mtlg.site ↗</text>
+</svg>
