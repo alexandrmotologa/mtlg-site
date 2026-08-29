@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396">
+  <defs>
+    <linearGradient id="bgBanner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070913"/>
+      <stop offset="50%" stop-color="#0d1424"/>
+      <stop offset="100%" stop-color="#05070c"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <filter id="glowBanner" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="50" result="blur" />
+    </filter>
+    <pattern id="gridBanner" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="rgba(255,255,255,0.035)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1584" height="396" fill="url(#bgBanner)"/>
+  <rect width="1584" height="396" fill="url(#gridBanner)"/>
+
+  <!-- Glowing ambients -->
+  <circle cx="500" cy="120" r="160" fill="#38bdf8" opacity="0.16" filter="url(#glowBanner)"/>
+  <circle cx="1400" cy="200" r="180" fill="#818cf8" opacity="0.14" filter="url(#glowBanner)"/>
+
+  <!-- Left Space Reserved for Profile Avatar (0 to 360px), Text Starts at 380px -->
+  
+  <!-- Status Tag -->
+  <rect x="380" y="45" width="270" height="32" rx="16" fill="rgba(56, 189, 248, 0.12)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1"/>
+  <circle cx="398" cy="61" r="5" fill="#38bdf8"/>
+  <text x="412" y="66" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#38bdf8" letter-spacing="1">AVAILABLE FOR HIRE</text>
+
+  <!-- Name & Title -->
+  <text x="380" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="900" fill="#ffffff" letter-spacing="-0.5">Alexandr Motologa</text>
+  <text x="380" y="172" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="700" fill="url(#cyanGrad)">Full-Stack Engineer • Bubble.io Architect • AI Developer</text>
+
+  <!-- Description -->
+  <text x="380" y="215" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="400" fill="#94a3b8">
+    Building high-velocity developer tools, enterprise visual architectures, low-code &amp; custom SaaS platforms.
+  </text>
+
+  <!-- Skill Badges -->
+  <rect x="380" y="255" width="180" height="38" rx="8" fill="rgba(2, 132, 199, 0.15)" stroke="rgba(2, 132, 199, 0.4)" stroke-width="1"/>
+  <text x="396" y="279" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#38bdf8">⚡ Bubble.io Expert</text>
+
+  <rect x="570" y="255" width="180" height="38" rx="8" fill="rgba(129, 140, 248, 0.15)" stroke="rgba(129, 140, 248, 0.4)" stroke-width="1"/>
+  <text x="586" y="279" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#818cf8">💻 Full-Stack Web</text>
+
+  <rect x="760" y="255" width="170" height="38" rx="8" fill="rgba(6, 182, 212, 0.15)" stroke="rgba(6, 182, 212, 0.4)" stroke-width="1"/>
+  <text x="776" y="279" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#06b6d4">🤖 AI Automation</text>
+
+  <rect x="940" y="255" width="190" height="38" rx="8" fill="rgba(34, 197, 94, 0.15)" stroke="rgba(34, 197, 94, 0.4)" stroke-width="1"/>
+  <text x="956" y="279" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#4ade80">⭐ Upwork &amp; Fiverr</text>
+
+  <!-- Metrics / Right Box -->
+  <rect x="1200" y="55" width="330" height="285" rx="16" fill="rgba(15, 22, 40, 0.7)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="1230" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="36" font-weight="900" fill="#38bdf8">40+</text>
+  <text x="1230" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#94a3b8">Production Apps Delivered</text>
+
+  <line x1="1230" y1="155" x2="1500" y2="155" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+  <text x="1230" y="190" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#e2e8f0">Personal Engineering Hub:</text>
+  <text x="1230" y="215" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="18" font-weight="700" fill="#38bdf8">https://mtlg.site ↗</text>
+
+  <text x="1230" y="260" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#94a3b8">Direct Contact:</text>
+  <text x="1230" y="285" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="14" font-weight="600" fill="#818cf8">contact@mtlg.site</text>
+</svg>
