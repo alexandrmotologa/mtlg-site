@@ -879,11 +879,21 @@ body {
 .contact-icon {
   width: 44px;
   height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  flex-shrink: 0;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .github-color { color: #f8fafc; }
@@ -936,6 +946,7 @@ body {
   font-size: 1.1rem;
   color: var(--text-muted);
   transition: transform 0.2s ease;
+  flex-shrink: 0;
 }
 
 .contact-card:hover .contact-arrow {
