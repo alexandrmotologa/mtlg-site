@@ -612,8 +612,14 @@ body {
 /* Contact Grid */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+}
+
+@media (max-width: 960px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .contact-card {
@@ -648,6 +654,32 @@ body {
 .bmc-color { color: #fde047; }
 .play-color { color: #34d399; }
 .linkedin-color { color: #60a5fa; }
+.npm-color { color: #ef4444; }
+
+.contact-emails-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.15rem;
+}
+
+.email-link-item {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.email-link-item:hover {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+}
+
+.email-dot-sep {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
 
 .contact-details h4 {
   font-size: 0.95rem;
@@ -2040,32 +2072,21 @@ body {
 
       <!-- Connect & Direct Channels -->
       <section class="section">
-        <h2 class="section-title">Get in Touch & Support</h2>
+        <h2 class="section-title">Get in Touch &amp; Support</h2>
         <div class="contact-grid">
-          
-          <a href="mailto:contact@mtlg.site" class="card contact-card">
-            <div class="contact-icon email-color">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <!-- Row 1: LinkedIn, GitHub, Direct Contact -->
+          <a href="https://linkedin.com/in/alexandrmotologa" target="_blank" rel="noopener" class="card contact-card linkedin-card">
+            <div class="contact-icon linkedin-color">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
             </div>
             <div class="contact-details">
-              <h4>Direct Contact</h4>
-              <p>contact@mtlg.site</p>
+              <h4>LinkedIn</h4>
+              <p>Alexandr Motologa</p>
             </div>
             <span class="contact-arrow">&rarr;</span>
           </a>
 
-          <a href="mailto:support@mtlg.site" class="card contact-card">
-            <div class="contact-icon email-color">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div class="contact-details">
-              <h4>Support Email</h4>
-              <p>support@mtlg.site</p>
-            </div>
-            <span class="contact-arrow">&rarr;</span>
-          </a>
-
-          <a href="https://github.com/alexandrmotologa" target="_blank" rel="noopener" class="card contact-card">
+          <a href="https://github.com/alexandrmotologa" target="_blank" rel="noopener" class="card contact-card github-card">
             <div class="contact-icon github-color">
               <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
             </div>
@@ -2076,13 +2097,40 @@ body {
             <span class="contact-arrow">&rarr;</span>
           </a>
 
+          <div class="card contact-card direct-contact-card">
+            <div class="contact-icon email-color">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-details">
+              <h4>Direct Contact</h4>
+              <div class="contact-emails-inline">
+                <a href="mailto:contact@mtlg.site" class="email-link-item">contact@mtlg.site</a>
+                <span class="email-dot-sep">&bull;</span>
+                <a href="mailto:support@mtlg.site" class="email-link-item">support@mtlg.site</a>
+              </div>
+            </div>
+            <span class="contact-arrow">&rarr;</span>
+          </div>
+
+          <!-- Row 2: Buy Me Coffee, Upwork, Fiverr -->
+          <a href="https://buymeacoffee.com/mtlg" target="_blank" rel="noopener" class="card contact-card bmc-card">
+            <div class="contact-icon bmc-color">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.216 6.415l-.132-.666c-.119-.598-.388-1.163-1.001-1.379-.623-.218-1.579-.199-2.612-.199H4.152c-.611 0-1.285.045-1.782.417-.502.375-.688.948-.77 1.547l-1.39 9.873c-.097.69.07 1.396.48 1.954.407.552 1.037.876 1.73.876h11.96c.717 0 1.365-.339 1.772-.912.408-.574.56-1.305.438-2.012l-.463-2.678c1.372-.089 2.502-.455 3.255-1.246.899-.945 1.096-2.28.834-3.594zm-3.324 3.738c-.461.484-1.233.729-2.298.729H13.6l.668-4.71h1.305c1.074 0 1.767.042 2.128.271.363.23.493.682.553 1.139.06.46-.07 1.091-.362 1.571zM18.8 20.738H3.2c-.442 0-.8-.358-.8-.8s.358-.8.8-.8h15.6c.442 0 .8.358.8.8s-.358.8-.8.8z"/></svg>
+            </div>
+            <div class="contact-details">
+              <h4>Buy Me a Coffee</h4>
+              <p>buymeacoffee.com/mtlg</p>
+            </div>
+            <span class="contact-arrow">&rarr;</span>
+          </a>
+
           <a href="https://www.upwork.com/freelancers/~0116e465cc7eedd04f?mp_source=share" target="_blank" rel="noopener" class="card contact-card upwork-card">
             <div class="contact-icon upwork-color">
               <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-3.044 0-4.992 2.148-5.748 4.221-1.393-2.179-2.457-4.743-3.044-6.425H5.807v8.529c0 1.776-1.442 3.22-3.218 3.22H0v2.793h2.589c3.315 0 6.011-2.697 6.011-6.013V7.079c.677 1.848 1.95 4.79 3.655 7.234l-2.072 9.687h2.895l1.492-6.974c1.233.784 2.658 1.254 4.091 1.254 3.037 0 5.508-2.472 5.508-5.51 0-3.038-2.471-5.508-5.508-5.508z"/></svg>
             </div>
             <div class="contact-details">
               <h4>Upwork Freelancing</h4>
-              <p>Custom Projects & Contracts</p>
+              <p>Custom Projects &amp; Contracts</p>
             </div>
             <span class="contact-arrow">&rarr;</span>
           </a>
@@ -2093,11 +2141,12 @@ body {
             </div>
             <div class="contact-details">
               <h4>Fiverr Pro Services</h4>
-              <p>Direct Gig & Custom Orders</p>
+              <p>Direct Gig &amp; Custom Orders</p>
             </div>
             <span class="contact-arrow">&rarr;</span>
           </a>
 
+          <!-- Row 3: Google Play Console, NPM Profile -->
           <a href="https://play.google.com/store/apps/developer?id=MTLG+Labs" target="_blank" rel="noopener" class="card contact-card play-card">
             <div class="contact-icon play-color">
               <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186c-.37-.417-.61-.994-.61-1.686V3.5c0-.692.24-1.269.609-1.686zm11.235 11.238l2.586 2.586-11.89 6.845 9.304-9.431zm0-2.104L5.54 1.517l11.89 6.845-2.586 2.586zm1.488 1.488l3.197 1.84c.895.515.895 1.353 0 1.868l-3.197 1.84-2.155-2.155 2.155-2.393z"/></svg>
@@ -2109,31 +2158,18 @@ body {
             <span class="contact-arrow">&rarr;</span>
           </a>
 
-          <a href="https://buymeacoffee.com/mtlg" target="_blank" rel="noopener" class="card contact-card bmc-card">
-            <div class="contact-icon bmc-color">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.216 6.415l-.132-.666c-.119-.598-.388-1.163-1.001-1.379-.623-.218-1.579-.199-2.612-.199H4.152c-.611 0-1.285.045-1.782.417-.502.375-.688.948-.77 1.547l-1.39 9.873c-.097.69.07 1.396.48 1.954.407.552 1.037.876 1.73.876h11.96c.717 0 1.365-.339 1.772-.912.408-.574.56-1.305.438-2.012l-.463-2.678c1.372-.089 2.502-.455 3.255-1.246.899-.945 1.096-2.28.834-3.594zm-3.324 3.738c-.461.484-1.233.729-2.298.729H13.6l.668-4.71h1.305c1.074 0 1.767.042 2.128.271.363.23.493.682.553 1.139.06.46-.07 1.091-.362 1.571zM18.8 20.738H3.2c-.442 0-.8-.358-.8-.8s.358-.8.8-.8h15.6c.442 0 .8.358.8.8s-.358.8-.8.8z"/></svg>
+          <a href="https://www.npmjs.com/~mtlg" target="_blank" rel="noopener" class="card contact-card npm-card">
+            <div class="contact-icon npm-color">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M0 7.334v9.332h24V7.334H0zm4.667 6.999H2.333V9.667h2.334v4.666zm4.666 0H7V9.667h2.333v4.666zm2.334 0h-2.334V7.334h4.667v6.999h-2.333zm9.333 0h-2.333V9.667h2.333v4.666zm-4.667 0h-2.333V9.667h2.333v4.666z"/></svg>
             </div>
             <div class="contact-details">
-              <h4>Support / Sponsor</h4>
-              <p>buymeacoffee.com/mtlg</p>
+              <h4>NPM Profile</h4>
+              <p>npmjs.com/~mtlg</p>
             </div>
             <span class="contact-arrow">&rarr;</span>
           </a>
-
-          <a href="https://linkedin.com/in/alexandrmotologa" target="_blank" rel="noopener" class="card contact-card">
-            <div class="contact-icon linkedin-color">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            </div>
-            <div class="contact-details">
-              <h4>LinkedIn</h4>
-              <p>Alexandr Motologa</p>
-            </div>
-            <span class="contact-arrow">&rarr;</span>
-          </a>
-
         </div>
       </section>
-
     </main>
 
     <!-- Footer -->
