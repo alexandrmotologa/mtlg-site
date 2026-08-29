@@ -615,6 +615,143 @@ body {
   border-color: rgba(255, 255, 255, 0.15);
 }
 
+
+/* Carousel Styles */
+.card-carousel,
+.project-carousel {
+  position: relative;
+  width: 100%;
+  height: 185px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  user-select: none;
+}
+
+.project-carousel {
+  margin: 0.85rem 0 1rem;
+  border-radius: var(--radius-sm, 10px);
+  border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
+}
+
+.carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: scale(0.98);
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.carousel-slide img,
+.card-media img,
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(10, 14, 25, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(6px);
+  padding: 0;
+}
+
+.card-carousel:hover .carousel-btn,
+.project-carousel:hover .carousel-btn {
+  opacity: 1;
+}
+
+.carousel-prev {
+  left: 8px;
+}
+
+.carousel-next {
+  right: 8px;
+}
+
+.carousel-btn:hover {
+  background: rgba(6, 182, 212, 0.8);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  z-index: 10;
+  padding: 3px 8px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+}
+
+.carousel-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.carousel-dot.active {
+  background: #38bdf8;
+  width: 14px;
+  border-radius: 4px;
+}
+
+.carousel-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 6px;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+}
+
 /* Projects Grid */
 .projects-grid {
   display: grid;
@@ -1481,7 +1618,7 @@ body {
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
             <div class="project-media">
-              <img src="images/snapframe.png" alt="SnapFrame.store Screenshot Preview" loading="lazy" />
+              <img src="images/snapframe-1.png" alt="SnapFrame.store Screenshot Preview" loading="lazy" />
             </div>
             <p>Studio-grade App Store & Google Play screenshot generator powered by AI Vision Auto-Pilot, 3D device frames, video previews, and Fastlane ASO metadata automation.</p>
             <div class="project-tags">
@@ -1501,8 +1638,40 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/oneira-web.png" alt="Oneira Space (Web) Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="5">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/oneira-web-1.png" alt="Oneira Space (Web) Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/oneira-web-2.png" alt="Oneira Space (Web) Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/oneira-web-3.png" alt="Oneira Space (Web) Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/oneira-web-4.png" alt="Oneira Space (Web) Screenshot Preview 4" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/oneira-web-5.png" alt="Oneira Space (Web) Screenshot Preview 5" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+              </div>
+              <div class="carousel-badge">1/5</div>
             </div>
             <p>Full-stack AI emotional sanctuary & symbolic Jungian dream analysis web platform with full mobile browser support and adaptive responsive experience. Built with Next.js 16, React 19, Google Generative AI, Firebase security, clinical CBT tools, and a dedicated practitioner portal.</p>
             <div class="project-tags">
@@ -1523,8 +1692,40 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/oneira-app.png" alt="Oneira: Journal & Self-Growth Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="5">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/oneira-app-1.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/oneira-app-2.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/oneira-app-3.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/oneira-app-4.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 4" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/oneira-app-5.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 5" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+              </div>
+              <div class="carousel-badge">1/5</div>
             </div>
             <p>Native Android application for self-discovery, daily mood check-ins, Jungian dream journals, gratitude logging, SOS Grounding exercises, and encrypted zero-retention privacy with Capacitor 8 biometric integration.</p>
             <div class="project-tags">
@@ -1562,8 +1763,28 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/bubble-cli.jpg" alt="bubble-io-cli Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="2">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/bubble-cli-1.jpg" alt="bubble-io-cli Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/bubble-cli-2.jpg" alt="bubble-io-cli Screenshot Preview 2" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+              </div>
+              <div class="carousel-badge">1/2</div>
             </div>
             <p>All-in-one TypeScript CLI for Bubble.io: automated AES-256 encrypted backups, Schema-as-Code generation, local mocking, extensible plugin system with lifecycle hooks, and CI/CD pipelines.</p>
             <div class="project-tags">
@@ -1583,8 +1804,32 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/bubble-ai-translator.png" alt="bubble-io-ai-translator Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="3">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/bubble-ai-translator-1.png" alt="bubble-io-ai-translator Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/bubble-ai-translator-2.png" alt="bubble-io-ai-translator Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/bubble-ai-translator-3.png" alt="bubble-io-ai-translator Screenshot Preview 3" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+              </div>
+              <div class="carousel-badge">1/3</div>
             </div>
             <p>Autonomous CLI & Interactive TUI translating entire Bubble.io apps into 108+ languages using 5 LLM providers (OpenAI, Anthropic Claude 3.5 Sonnet, Gemini, OpenRouter, and local Ollama/Llama 3). Built with SQLite translation memory caching, brand glossary protection, and layout pseudo-localization.</p>
             <div class="project-tags">
@@ -1604,8 +1849,32 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/bubble-dead-code-detector.png" alt="bubble-io-dead-code-detector Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="3">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/bubble-dead-code-detector-1.png" alt="bubble-io-dead-code-detector Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/bubble-dead-code-detector-2.png" alt="bubble-io-dead-code-detector Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/bubble-dead-code-detector-3.png" alt="bubble-io-dead-code-detector Screenshot Preview 3" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+              </div>
+              <div class="carousel-badge">1/3</div>
             </div>
             <p>Dead code detector, dependency analyzer & health scorer for Bubble.io. Scans exported .bubble files for dead workflows, orphaned fields, and unused plugins, outputs a 0-100 Health Score, and includes an interactive dependency graph and VS Code Extension.</p>
             <div class="project-tags">
@@ -1625,8 +1894,28 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/bubble-visual-tester.png" alt="bubble-io-visual-tester Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="2">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/bubble-visual-tester-1.png" alt="bubble-io-visual-tester Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/bubble-visual-tester-2.png" alt="bubble-io-visual-tester Screenshot Preview 2" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+              </div>
+              <div class="carousel-badge">1/2</div>
             </div>
             <p>Automated visual regression testing & pixel-level diffing utility for Bubble.io. Powered by Playwright + pixelmatch with component-level testing, AWS S3 baseline syncing, smart dynamic masking, and interactive HTML before/after slider comparison reports.</p>
             <div class="project-tags">
@@ -1646,8 +1935,36 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/alu-traumterrasse.jpg" alt="Alu-Traumterrasse Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="4">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/alu-traumterrasse-1.jpg" alt="Alu-Traumterrasse Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/alu-traumterrasse-2.jpg" alt="Alu-Traumterrasse Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/alu-traumterrasse-3.png" alt="Alu-Traumterrasse Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/alu-traumterrasse-4.png" alt="Alu-Traumterrasse Screenshot Preview 4" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+              </div>
+              <div class="carousel-badge">1/4</div>
             </div>
             <p>Custom architectural e-commerce platform for luxury aluminium terrace roofing & cold wintergardens in Germany. Features full online ordering down to individual fittings, dynamic product & material galleries, quotation requests, and Stripe payments.</p>
             <div class="project-tags">
@@ -1667,8 +1984,40 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/quiz2coin.png" alt="Quiz2Coin Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="5">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/quiz2coin-1.png" alt="Quiz2Coin Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/quiz2coin-2.png" alt="Quiz2Coin Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/quiz2coin-3.png" alt="Quiz2Coin Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/quiz2coin-4.png" alt="Quiz2Coin Screenshot Preview 4" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/quiz2coin-5.png" alt="Quiz2Coin Screenshot Preview 5" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+              </div>
+              <div class="carousel-badge">1/5</div>
             </div>
             <p>Gamified quiz & tournament platform with multi-rail fiat/crypto payments (Stripe, BridgerPay, UPI, Solana wallet integration & USDC payouts), automated DOCX/CSV question ingestion, and tokenomics reward architecture.</p>
             <div class="project-tags">
@@ -1706,8 +2055,40 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/telequiz.png" alt="TeleQuiz Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="5">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/telequiz-1.png" alt="TeleQuiz Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/telequiz-2.png" alt="TeleQuiz Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/telequiz-3.png" alt="TeleQuiz Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/telequiz-4.png" alt="TeleQuiz Screenshot Preview 4" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/telequiz-5.png" alt="TeleQuiz Screenshot Preview 5" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+              </div>
+              <div class="carousel-badge">1/5</div>
             </div>
             <p>Official TeleStore Telegram Mini App & bot gaming platform. Engineered with bespoke Telegram OAuth authentication, push notifications, and native Telegram Stars in-app currency payments.</p>
             <div class="project-tags">
@@ -1727,8 +2108,32 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/atcollege.png" alt="atCollege.com Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="3">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/atcollege-1.png" alt="atCollege.com Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/atcollege-2.png" alt="atCollege.com Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/atcollege-3.png" alt="atCollege.com Screenshot Preview 3" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+              </div>
+              <div class="carousel-badge">1/3</div>
             </div>
             <p>Real-time campus social & community discovery platform connecting students across 25+ universities with events, interest groups (coding, esports, wellness), local places, and volunteer or work opportunities.</p>
             <div class="project-tags">
@@ -1748,8 +2153,32 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/nxtchapter.png" alt="Nxt Chapter Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="3">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/nxtchapter-1.png" alt="Nxt Chapter Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/nxtchapter-2.png" alt="Nxt Chapter Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/nxtchapter-3.png" alt="Nxt Chapter Screenshot Preview 3" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+              </div>
+              <div class="carousel-badge">1/3</div>
             </div>
             <p>Australian sustainable second-hand book marketplace. Integrated ISBNDB API for automated metadata lookup, multi-seller inventory management, condition grading, live Instagram social feeds, and Stripe payments.</p>
             <div class="project-tags">
@@ -1769,8 +2198,36 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/burgercraft.png" alt="BurgerCraft Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="4">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/burgercraft-1.png" alt="BurgerCraft Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/burgercraft-2.png" alt="BurgerCraft Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/burgercraft-3.png" alt="BurgerCraft Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/burgercraft-4.png" alt="BurgerCraft Screenshot Preview 4" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+              </div>
+              <div class="carousel-badge">1/4</div>
             </div>
             <p>Mobile-first digital menu & food delivery white-label platform for dark kitchens and restaurants. Features item customization, category filtering, Stripe checkout, and a real-time merchant kitchen triage & order management dashboard.</p>
             <div class="project-tags">
@@ -1790,8 +2247,32 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/greenspace.jpg" alt="GreenSpace Architects Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="3">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/greenspace-1.jpg" alt="GreenSpace Architects Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/greenspace-2.png" alt="GreenSpace Architects Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/greenspace-3.jpg" alt="GreenSpace Architects Screenshot Preview 3" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+              </div>
+              <div class="carousel-badge">1/3</div>
             </div>
             <p>Visual-first luxury portfolio web application for architecture firms and spatial designers. Features high-res project galleries, structural blueprints & spec sheets, category filtering, and client consultation request pipelines.</p>
             <div class="project-tags">
@@ -1811,8 +2292,36 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/pixelwave.png" alt="PixelWave Agency Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="4">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/pixelwave-1.png" alt="PixelWave Agency Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/pixelwave-2.png" alt="PixelWave Agency Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/pixelwave-3.jpg" alt="PixelWave Agency Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/pixelwave-4.png" alt="PixelWave Agency Screenshot Preview 4" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+              </div>
+              <div class="carousel-badge">1/4</div>
             </div>
             <p>High-converting portfolio web app for software studios and digital agencies. Includes interactive case study modules, tiered service packages, client reviews, and custom lead generation forms.</p>
             <div class="project-tags">
@@ -1832,8 +2341,32 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/acrehedge.png" alt="AcreHedge Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="3">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/acrehedge-1.png" alt="AcreHedge Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/acrehedge-2.png" alt="AcreHedge Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/acrehedge-3.png" alt="AcreHedge Screenshot Preview 3" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+              </div>
+              <div class="carousel-badge">1/3</div>
             </div>
             <p>Comprehensive agricultural risk management and FinTech hedging platform. Features real-time CBOT commodity market pricing, crop volatility prediction models, weather event insurance calculations, and Plaid financial integrations.</p>
             <div class="project-tags">
@@ -1853,8 +2386,36 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/format-kultify.png" alt="Format (Kultify) Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="4">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/format-kultify-1.png" alt="Format (Kultify) Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/format-kultify-2.png" alt="Format (Kultify) Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/format-kultify-3.png" alt="Format (Kultify) Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/format-kultify-4.png" alt="Format (Kultify) Screenshot Preview 4" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+              </div>
+              <div class="carousel-badge">1/4</div>
             </div>
             <p>Community-driven Web3 collaborative publishing and storytelling platform. Enables modular world-building elements, character traits, and creative lore assets to be minted, owned, and traded as NFTs so all creators get compensated.</p>
             <div class="project-tags">
@@ -1875,7 +2436,7 @@ body {
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
             <div class="project-media">
-              <img src="images/inktradr.png" alt="InkTradr Screenshot Preview" loading="lazy" />
+              <img src="images/inktradr-1.png" alt="InkTradr Screenshot Preview" loading="lazy" />
             </div>
             <p>Digital marketplace & licensing ecosystem for tattoo artists and flash art collectors. Built on Bubble.io with Polygon MATIC Web3 checkout, artist studio portals, custom ink booking requests, and style category curation.</p>
             <div class="project-tags">
@@ -1894,8 +2455,40 @@ body {
                 <h3>SatoshiBet</h3>
               </div>
             </div>
-            <div class="project-media">
-              <img src="images/satoshibet.png" alt="SatoshiBet Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="5">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/satoshibet-1.png" alt="SatoshiBet Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/satoshibet-2.png" alt="SatoshiBet Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/satoshibet-3.png" alt="SatoshiBet Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/satoshibet-4.png" alt="SatoshiBet Screenshot Preview 4" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/satoshibet-5.png" alt="SatoshiBet Screenshot Preview 5" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+              </div>
+              <div class="carousel-badge">1/5</div>
             </div>
             <p>Polymarket-style decentralized prediction market MVP built end-to-end on Bubble.io. Features real-time probability tracking, interactive odds charts, Yes/No binary outcome betting, and category filters (politics, finance, crypto).</p>
             <div class="project-tags">
@@ -1915,8 +2508,32 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/aislesync.png" alt="AisleSync Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="3">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/aislesync-1.png" alt="AisleSync Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/aislesync-2.png" alt="AisleSync Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/aislesync-3.png" alt="AisleSync Screenshot Preview 3" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+              </div>
+              <div class="carousel-badge">1/3</div>
             </div>
             <p>Smart grocery barcode scanner & shopping companion. Built with a high-performance Flutter mobile wrapper (Android & iOS) integrated over a Bubble.io backend, featuring multi-retailer inventory lookup and barcode camera scanning.</p>
             <div class="project-tags">
@@ -1936,8 +2553,40 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/evas-ro.png" alt="EVAS RO Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="5">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/evas-ro-1.png" alt="EVAS RO Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/evas-ro-2.png" alt="EVAS RO Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/evas-ro-3.png" alt="EVAS RO Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/evas-ro-4.png" alt="EVAS RO Screenshot Preview 4" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/evas-ro-5.png" alt="EVAS RO Screenshot Preview 5" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+              </div>
+              <div class="carousel-badge">1/5</div>
             </div>
             <p>Mobile-first disability & space accessibility audit platform for field inspectors in Romania (Evaluare Voluntară Accesibilitate Spațiul). Features multi-step compliance evaluations, photo/video evidence uploads, and automated scoring.</p>
             <div class="project-tags">
@@ -1957,8 +2606,28 @@ body {
               </div>
               <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </div>
-            <div class="project-media">
-              <img src="images/ezlanguage.png" alt="EzLanguage (EzSchool) Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="2">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/ezlanguage-1.png" alt="EzLanguage (EzSchool) Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/ezlanguage-2.png" alt="EzLanguage (EzSchool) Screenshot Preview 2" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+              </div>
+              <div class="carousel-badge">1/2</div>
             </div>
             <p>Interactive language learning and online tutor booking platform. Features audio pronunciation playback, gamified flashcards, tutor discovery with hourly rates, calendar scheduling, and structured study modules.</p>
             <div class="project-tags">
@@ -1995,8 +2664,32 @@ body {
                 <h3>Nothing Unwanted</h3>
               </div>
             </div>
-            <div class="project-media">
-              <img src="images/nothing-unwanted.png" alt="Nothing Unwanted Screenshot Preview" loading="lazy" />
+            <div class="project-carousel" data-current="0" data-total="3">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/nothing-unwanted-1.png" alt="Nothing Unwanted Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/nothing-unwanted-2.png" alt="Nothing Unwanted Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/nothing-unwanted-3.png" alt="Nothing Unwanted Screenshot Preview 3" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+              </div>
+              <div class="carousel-badge">1/3</div>
             </div>
             <p>Mobile-first artist & venue booking marketplace. Features an integrated persistent background audio player that streams uninterrupted across pages, gig application pipelines, dual-user workflows (Artists & Venues), and Stripe payouts.</p>
             <div class="project-tags">
@@ -2367,5 +3060,67 @@ body {
   <div id="toast" class="toast">Email copied to clipboard!</div>
 
   <script src="script.js"></script>
+
+<script>
+// Carousel Logic for Multi-Image Cards
+function updateCarousel(container, newIndex) {
+  const total = parseInt(container.dataset.total, 10);
+  let idx = newIndex;
+  if (idx < 0) idx = total - 1;
+  if (idx >= total) idx = 0;
+  
+  container.dataset.current = idx;
+  
+  const slides = container.querySelectorAll('.carousel-slide');
+  slides.forEach((s, i) => {
+    s.classList.toggle('active', i === idx);
+  });
+  
+  const dots = container.querySelectorAll('.carousel-dot');
+  dots.forEach((d, i) => {
+    d.classList.toggle('active', i === idx);
+  });
+  
+  const badge = container.querySelector('.carousel-badge');
+  if (badge) {
+    badge.textContent = (idx + 1) + '/' + total;
+  }
+}
+
+function stepCarousel(btn, delta) {
+  const container = btn.closest('.card-carousel, .project-carousel');
+  if (!container) return;
+  const current = parseInt(container.dataset.current, 10) || 0;
+  updateCarousel(container, current + delta);
+}
+
+function setCarouselSlide(dot, index) {
+  const container = dot.closest('.card-carousel, .project-carousel');
+  if (!container) return;
+  updateCarousel(container, index);
+}
+
+// Touch swipe support for carousels
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.card-carousel, .project-carousel').forEach(carousel => {
+    let startX = 0;
+    let endX = 0;
+    
+    carousel.addEventListener('touchstart', (e) => {
+      startX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    carousel.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].screenX;
+      if (startX - endX > 40) {
+        stepCarousel(carousel.querySelector('.carousel-next'), 1);
+      } else if (endX - startX > 40) {
+        stepCarousel(carousel.querySelector('.carousel-prev'), -1);
+      }
+    }, { passive: true });
+  });
+});
+</script>
+
 </body>
 </html>
