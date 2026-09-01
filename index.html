@@ -610,262 +610,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-
-.project-media {
-  width: 100%;
-  height: 180px;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  margin: 0.85rem 0 1rem;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--card-border);
-  position: relative;
-}
-
-.project-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  transition: transform 0.35s ease;
-  display: block;
-}
-
-.project-card:hover .project-media img {
-  transform: scale(1.04);
-}
-
-.project-card-static {
-  cursor: default;
-}
-
-.project-card-static:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.15);
-}
-
-
-
-
-/* Enhanced Media & Pointer Drag-To-Scroll Carousel */
-.card-media,
-.project-media,
-.card-carousel,
-.project-carousel {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 1.25rem;
-  background: radial-gradient(circle at center, rgba(22, 27, 44, 0.8), rgba(6, 8, 14, 0.95));
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  user-select: none;
-  -webkit-user-select: none;
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
-  touch-action: pan-y pinch-zoom;
-}
-
-.project-media,
-.project-carousel {
-  margin: 0.85rem 0 1rem;
-  border-radius: var(--radius-sm, 12px);
-  border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
-}
-
-.card-media,
-.project-media {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  box-sizing: border-box;
-}
-
-.card-media img,
-.project-media img {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-  transition: transform 0.3s ease;
-  pointer-events: none;
-  -webkit-user-drag: none;
-  user-select: none;
-}
-
-.product-card:hover .card-media img,
-.project-card:hover .project-media img {
-  transform: scale(1.02);
-}
-
-/* Scroll-Snap Track */
-.carousel-track {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  cursor: grab;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: pan-y pinch-zoom;
-}
-
-.carousel-track:active {
-  cursor: grabbing;
-}
-
-.carousel-track::-webkit-scrollbar {
-  display: none;
-}
-
-.carousel-slide {
-  flex: 0 0 100%;
-  width: 100%;
-  height: 100%;
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  box-sizing: border-box;
-  position: relative;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-  transition: transform 0.3s ease;
-  pointer-events: none;
-  -webkit-user-drag: none;
-  user-select: none;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(8, 12, 22, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 10;
-  opacity: 0;
-  transition: all 0.2s ease;
-  backdrop-filter: blur(8px);
-  padding: 0;
-}
-
-.card-carousel:hover .carousel-btn,
-.project-carousel:hover .carousel-btn {
-  opacity: 1;
-}
-
-.carousel-prev {
-  left: 10px;
-}
-
-.carousel-next {
-  right: 10px;
-}
-
-.carousel-btn:hover {
-  background: rgba(6, 182, 212, 0.9);
-  border-color: rgba(255, 255, 255, 0.7);
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 0 12px rgba(6, 182, 212, 0.6);
-}
-
-.carousel-indicators {
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 5px;
-  z-index: 10;
-  padding: 4px 9px;
-  background: rgba(5, 7, 14, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 9999px;
-  backdrop-filter: blur(6px);
-}
-
-.carousel-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.35);
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.carousel-dot.active {
-  background: #38bdf8;
-  width: 16px;
-  border-radius: 4px;
-  box-shadow: 0 0 8px rgba(56, 189, 248, 0.7);
-}
-
-.carousel-badge {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: rgba(5, 7, 14, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #e2e8f0;
-  font-family: var(--font-mono, monospace);
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 3px 8px;
-  border-radius: 6px;
-  z-index: 10;
-  backdrop-filter: blur(6px);
-}
-
-
-/* Interactive Spotlight Card Glassmorphism */
-.product-card,
-.card,
-.bento-card,
-.founder-card,
-.hero-card {
-  position: relative;
-  background-image: radial-gradient(
-    400px circle at var(--spotlight-x, -500px) var(--spotlight-y, -500px),
-    rgba(6, 182, 212, 0.08),
-    transparent 70%
-  );
-  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.product-card:hover,
-.card:hover {
-  box-shadow: 0 12px 32px -8px rgba(6, 182, 212, 0.15);
-}
-
 /* Projects Grid */
 .projects-grid {
   display: grid;
@@ -879,6 +623,7 @@ body {
   color: inherit;
   display: flex;
   flex-direction: column;
+  scroll-margin-top: 100px;
 }
 
 .project-card:hover {
@@ -898,6 +643,105 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+}
+
+.project-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.card-share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.card-share-btn:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.5);
+  color: #c7d2fe;
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+}
+
+.card-share-btn:active {
+  transform: scale(0.92);
+}
+
+.card-share-btn .check-icon {
+  display: none;
+  color: var(--accent-emerald);
+}
+
+.card-share-btn.copied {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.5);
+  color: var(--accent-emerald);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.35);
+}
+
+.card-share-btn.copied .share-icon {
+  display: none;
+}
+
+.card-share-btn.copied .check-icon {
+  display: block;
+}
+
+/* Deep Link Target Highlight Animation */
+.project-card.highlighted-project {
+  animation: site-card-pulse 3.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  z-index: 10;
+}
+
+@keyframes site-card-pulse {
+  0% {
+    transform: translateY(0) scale(1);
+    border-color: rgba(99, 102, 241, 0.2);
+    box-shadow: 0 0 0 rgba(99, 102, 241, 0);
+  }
+  15% {
+    transform: translateY(-8px) scale(1.025);
+    border-color: rgba(99, 102, 241, 0.95);
+    box-shadow: 
+      0 0 0 4px rgba(99, 102, 241, 0.35),
+      0 20px 40px rgba(0, 0, 0, 0.8),
+      0 0 35px rgba(99, 102, 241, 0.5),
+      0 0 70px rgba(6, 182, 212, 0.3);
+  }
+  30% {
+    transform: translateY(-6px) scale(1.02);
+    border-color: rgba(6, 182, 212, 0.85);
+    box-shadow: 
+      0 0 0 3px rgba(6, 182, 212, 0.25),
+      0 18px 36px rgba(0, 0, 0, 0.7),
+      0 0 30px rgba(6, 182, 212, 0.4);
+  }
+  70% {
+    transform: translateY(-3px) scale(1.01);
+    border-color: rgba(99, 102, 241, 0.6);
+    box-shadow: 
+      0 0 0 2px rgba(99, 102, 241, 0.2),
+      0 12px 28px rgba(0, 0, 0, 0.6),
+      0 0 20px rgba(99, 102, 241, 0.25);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    border-color: var(--card-border);
+    box-shadow: none;
+  }
 }
 
 .project-badge {
@@ -965,14 +809,8 @@ body {
 /* Contact Grid */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
-}
-
-@media (max-width: 960px) {
-  .contact-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 .contact-card {
@@ -993,21 +831,11 @@ body {
 .contact-icon {
   width: 44px;
   height: 44px;
-  min-width: 44px;
-  min-height: 44px;
-  flex-shrink: 0;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
 }
 
 .github-color { color: #f8fafc; }
@@ -1017,32 +845,6 @@ body {
 .bmc-color { color: #fde047; }
 .play-color { color: #34d399; }
 .linkedin-color { color: #60a5fa; }
-.npm-color { color: #ef4444; }
-
-.contact-emails-inline {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.35rem;
-  margin-top: 0.15rem;
-}
-
-.email-link-item {
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.email-link-item:hover {
-  color: var(--accent-cyan);
-  text-decoration: underline;
-}
-
-.email-dot-sep {
-  color: var(--text-muted);
-  font-size: 0.75rem;
-}
 
 .contact-details h4 {
   font-size: 0.95rem;
@@ -1060,7 +862,6 @@ body {
   font-size: 1.1rem;
   color: var(--text-muted);
   transition: transform 0.2s ease;
-  flex-shrink: 0;
 }
 
 .contact-card:hover .contact-arrow {
@@ -1734,13 +1535,19 @@ body {
 
         <div class="projects-grid">
           <!-- Project: MCP Studio -->
-          <a href="https://github.com/alexandrmotologa/mcp-studio" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://github.com/alexandrmotologa/mcp-studio" target="_blank" rel="noopener" class="card project-card" id="mcp-studio" data-project-id="mcp-studio" data-project-title="MCP Studio">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge dev-badge">In Active Dev</span>
                 <h3>MCP Studio</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="mcp-studio" data-project-title="MCP Studio" title="Copy direct link to MCP Studio" aria-label="Copy direct link to MCP Studio">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>The all-in-one desktop IDE & visual inspector for Model Context Protocol (MCP): auto-discovery, interactive tool testing, multi-LLM agent simulator, live JSON-RPC traffic streaming, and 1-click Cursor & Claude export.</p>
             <div class="project-tags">
@@ -1752,13 +1559,19 @@ body {
           </a>
 
           <!-- Project: SnapFrame.store -->
-          <a href="https://snapframe.store" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://snapframe.store" target="_blank" rel="noopener" class="card project-card" id="snapframe" data-project-id="snapframe" data-project-title="SnapFrame.store">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Production SaaS</span>
                 <h3>SnapFrame.store</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="snapframe" data-project-title="SnapFrame.store" title="Copy direct link to SnapFrame.store" aria-label="Copy direct link to SnapFrame.store">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Studio-grade App Store & Google Play screenshot generator powered by AI Vision Auto-Pilot, 3D device frames, video previews, and Fastlane ASO metadata automation.</p>
             <div class="project-tags">
@@ -1770,13 +1583,19 @@ body {
           </a>
 
           <!-- Project: Oneira Space (Web) -->
-          <a href="https://www.oneira.space" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://www.oneira.space" target="_blank" rel="noopener" class="card project-card" id="oneira-web" data-project-id="oneira-web" data-project-title="Oneira Space (Web)">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Web Platform</span>
                 <h3>Oneira Space (Web)</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="oneira-web" data-project-title="Oneira Space (Web)" title="Copy direct link to Oneira Space (Web)" aria-label="Copy direct link to Oneira Space (Web)">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Full-stack AI emotional sanctuary & symbolic Jungian dream analysis web platform with full mobile browser support and adaptive responsive experience. Built with Next.js 16, React 19, Google Generative AI, Firebase security, clinical CBT tools, and a dedicated practitioner portal.</p>
             <div class="project-tags">
@@ -1789,13 +1608,19 @@ body {
           </a>
 
           <!-- Project: Oneira: Journal & Self-Growth -->
-          <a href="https://play.google.com/store/apps/details?id=space.oneira.app" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://play.google.com/store/apps/details?id=space.oneira.app" target="_blank" rel="noopener" class="card project-card" id="oneira-app" data-project-id="oneira-app" data-project-title="Oneira: Journal & Self-Growth">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Google Play App</span>
                 <h3>Oneira: Journal & Self-Growth</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="oneira-app" data-project-title="Oneira: Journal & Self-Growth" title="Copy direct link to Oneira: Journal & Self-Growth" aria-label="Copy direct link to Oneira: Journal & Self-Growth">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Native Android application for self-discovery, daily mood check-ins, Jungian dream journals, gratitude logging, SOS Grounding exercises, and encrypted zero-retention privacy with Capacitor 8 biometric integration.</p>
             <div class="project-tags">
@@ -1807,13 +1632,19 @@ body {
           </a>
 
           <!-- Project: Bubble.io Dev Studio -->
-          <a href="https://github.com/alexandrmotologa/bubble-io-dev-studio" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://github.com/alexandrmotologa/bubble-io-dev-studio" target="_blank" rel="noopener" class="card project-card" id="bubble-dev-studio" data-project-id="bubble-dev-studio" data-project-title="Bubble.io Dev Studio">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge dev-badge">In Active Dev</span>
                 <h3>Bubble.io Dev Studio</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="bubble-dev-studio" data-project-title="Bubble.io Dev Studio" title="Copy direct link to Bubble.io Dev Studio" aria-label="Copy direct link to Bubble.io Dev Studio">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>All-in-one Developer Studio & Desktop GUI for Bubble.io: automated backups, schema inspection, dead code audit, AI translation, and visual QA testing.</p>
             <div class="project-tags">
@@ -1825,13 +1656,19 @@ body {
           </a>
 
           <!-- Project: bubble-io-cli -->
-          <a href="https://github.com/alexandrmotologa/bubble-io-cli" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://github.com/alexandrmotologa/bubble-io-cli" target="_blank" rel="noopener" class="card project-card" id="bubble-cli" data-project-id="bubble-cli" data-project-title="bubble-io-cli">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge dev-badge">Open Source</span>
                 <h3>bubble-io-cli</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="bubble-cli" data-project-title="bubble-io-cli" title="Copy direct link to bubble-io-cli" aria-label="Copy direct link to bubble-io-cli">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>All-in-one TypeScript CLI for Bubble.io: automated AES-256 encrypted backups, Schema-as-Code generation, local mocking, extensible plugin system with lifecycle hooks, and CI/CD pipelines.</p>
             <div class="project-tags">
@@ -1843,13 +1680,19 @@ body {
           </a>
 
           <!-- Project: bubble-io-ai-translator -->
-          <a href="https://github.com/alexandrmotologa/bubble-io-ai-translator" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://github.com/alexandrmotologa/bubble-io-ai-translator" target="_blank" rel="noopener" class="card project-card" id="bubble-ai-translator" data-project-id="bubble-ai-translator" data-project-title="bubble-io-ai-translator">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge dev-badge">AI Tool</span>
                 <h3>bubble-io-ai-translator</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="bubble-ai-translator" data-project-title="bubble-io-ai-translator" title="Copy direct link to bubble-io-ai-translator" aria-label="Copy direct link to bubble-io-ai-translator">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Autonomous CLI & Interactive TUI translating entire Bubble.io apps into 108+ languages using 5 LLM providers (OpenAI, Anthropic Claude 3.5 Sonnet, Gemini, OpenRouter, and local Ollama/Llama 3). Built with SQLite translation memory caching, brand glossary protection, and layout pseudo-localization.</p>
             <div class="project-tags">
@@ -1861,13 +1704,19 @@ body {
           </a>
 
           <!-- Project: bubble-io-dead-code-detector -->
-          <a href="https://github.com/alexandrmotologa/bubble-io-dead-code-detector" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://github.com/alexandrmotologa/bubble-io-dead-code-detector" target="_blank" rel="noopener" class="card project-card" id="bubble-dead-code-detector" data-project-id="bubble-dead-code-detector" data-project-title="bubble-io-dead-code-detector">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge dev-badge">Code Health</span>
                 <h3>bubble-io-dead-code-detector</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="bubble-dead-code-detector" data-project-title="bubble-io-dead-code-detector" title="Copy direct link to bubble-io-dead-code-detector" aria-label="Copy direct link to bubble-io-dead-code-detector">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Dead code detector, dependency analyzer & health scorer for Bubble.io. Scans exported .bubble files for dead workflows, orphaned fields, and unused plugins, outputs a 0-100 Health Score, and includes an interactive dependency graph and VS Code Extension.</p>
             <div class="project-tags">
@@ -1879,13 +1728,19 @@ body {
           </a>
 
           <!-- Project: bubble-io-visual-tester -->
-          <a href="https://github.com/alexandrmotologa/bubble-io-visual-tester" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://github.com/alexandrmotologa/bubble-io-visual-tester" target="_blank" rel="noopener" class="card project-card" id="bubble-visual-tester" data-project-id="bubble-visual-tester" data-project-title="bubble-io-visual-tester">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge dev-badge">Visual QA</span>
                 <h3>bubble-io-visual-tester</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="bubble-visual-tester" data-project-title="bubble-io-visual-tester" title="Copy direct link to bubble-io-visual-tester" aria-label="Copy direct link to bubble-io-visual-tester">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Automated visual regression testing & pixel-level diffing utility for Bubble.io. Powered by Playwright + pixelmatch with component-level testing, AWS S3 baseline syncing, smart dynamic masking, and interactive HTML before/after slider comparison reports.</p>
             <div class="project-tags">
@@ -1897,13 +1752,19 @@ body {
           </a>
 
           <!-- Project: Alu-Traumterrasse -->
-          <a href="https://alu-traumterrasse.de" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://alu-traumterrasse.de" target="_blank" rel="noopener" class="card project-card" id="alu-traumterrasse" data-project-id="alu-traumterrasse" data-project-title="Alu-Traumterrasse">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live E-Commerce</span>
                 <h3>Alu-Traumterrasse</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="alu-traumterrasse" data-project-title="Alu-Traumterrasse" title="Copy direct link to Alu-Traumterrasse" aria-label="Copy direct link to Alu-Traumterrasse">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Custom architectural e-commerce platform for luxury aluminium terrace roofing & cold wintergardens in Germany. Features full online ordering down to individual fittings, dynamic product & material galleries, quotation requests, and Stripe payments.</p>
             <div class="project-tags">
@@ -1915,13 +1776,19 @@ body {
           </a>
 
           <!-- Project: Quiz2Coin -->
-          <a href="https://quiz2coin.com" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://quiz2coin.com" target="_blank" rel="noopener" class="card project-card" id="quiz2coin" data-project-id="quiz2coin" data-project-title="Quiz2Coin">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Web3 App</span>
                 <h3>Quiz2Coin</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="quiz2coin" data-project-title="Quiz2Coin" title="Copy direct link to Quiz2Coin" aria-label="Copy direct link to Quiz2Coin">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Gamified quiz & tournament platform with multi-rail fiat/crypto payments (Stripe, BridgerPay, UPI, Solana wallet integration & USDC payouts), automated DOCX/CSV question ingestion, and tokenomics reward architecture.</p>
             <div class="project-tags">
@@ -1933,13 +1800,19 @@ body {
           </a>
 
           <!-- Project: ONE2ALL -->
-          <a href="https://one2all.io" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://one2all.io" target="_blank" rel="noopener" class="card project-card" id="one2all" data-project-id="one2all" data-project-title="ONE2ALL">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Web3 Engine</span>
                 <h3>ONE2ALL</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="one2all" data-project-title="ONE2ALL" title="Copy direct link to ONE2ALL" aria-label="Copy direct link to ONE2ALL">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>The #1 rated white-label Web3 & NFT marketplace platform built 100% on Bubble.io (featured by Rarible DAO). Engineered decentralized minting, collection management, Rarible Protocol API integrations, Pinata IPFS metadata, and custom crypto wallet bridges.</p>
             <div class="project-tags">
@@ -1951,13 +1824,19 @@ body {
           </a>
 
           <!-- Project: TeleQuiz -->
-          <a href="https://telequiz.co" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://telequiz.co" target="_blank" rel="noopener" class="card project-card" id="telequiz" data-project-id="telequiz" data-project-title="TeleQuiz">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Mini App</span>
                 <h3>TeleQuiz</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="telequiz" data-project-title="TeleQuiz" title="Copy direct link to TeleQuiz" aria-label="Copy direct link to TeleQuiz">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Official TeleStore Telegram Mini App & bot gaming platform. Engineered with bespoke Telegram OAuth authentication, push notifications, and native Telegram Stars in-app currency payments.</p>
             <div class="project-tags">
@@ -1969,13 +1848,19 @@ body {
           </a>
 
           <!-- Project: atCollege.com -->
-          <a href="https://atcollege.com" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://atcollege.com" target="_blank" rel="noopener" class="card project-card" id="atcollege" data-project-id="atcollege" data-project-title="atCollege.com">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Platform</span>
                 <h3>atCollege.com</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="atcollege" data-project-title="atCollege.com" title="Copy direct link to atCollege.com" aria-label="Copy direct link to atCollege.com">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Real-time campus social & community discovery platform connecting students across 25+ universities with events, interest groups (coding, esports, wellness), local places, and volunteer or work opportunities.</p>
             <div class="project-tags">
@@ -1987,13 +1872,19 @@ body {
           </a>
 
           <!-- Project: Nxt Chapter -->
-          <a href="https://nxtchapter.com.au" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://nxtchapter.com.au" target="_blank" rel="noopener" class="card project-card" id="nxtchapter" data-project-id="nxtchapter" data-project-title="Nxt Chapter">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Marketplace</span>
                 <h3>Nxt Chapter</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="nxtchapter" data-project-title="Nxt Chapter" title="Copy direct link to Nxt Chapter" aria-label="Copy direct link to Nxt Chapter">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Australian sustainable second-hand book marketplace. Integrated ISBNDB API for automated metadata lookup, multi-seller inventory management, condition grading, live Instagram social feeds, and Stripe payments.</p>
             <div class="project-tags">
@@ -2005,13 +1896,19 @@ body {
           </a>
 
           <!-- Project: BurgerCraft -->
-          <a href="https://menu-and-delivery.bubbleapps.io/?page=home" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://menu-and-delivery.bubbleapps.io/?page=home" target="_blank" rel="noopener" class="card project-card" id="burgercraft" data-project-id="burgercraft" data-project-title="BurgerCraft">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Web App</span>
                 <h3>BurgerCraft</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="burgercraft" data-project-title="BurgerCraft" title="Copy direct link to BurgerCraft" aria-label="Copy direct link to BurgerCraft">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Mobile-first digital menu & food delivery white-label platform for dark kitchens and restaurants. Features item customization, category filtering, Stripe checkout, and a real-time merchant kitchen triage & order management dashboard.</p>
             <div class="project-tags">
@@ -2023,13 +1920,19 @@ body {
           </a>
 
           <!-- Project: GreenSpace Architects -->
-          <a href="https://architecture-company.bubbleapps.io" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://architecture-company.bubbleapps.io" target="_blank" rel="noopener" class="card project-card" id="greenspace" data-project-id="greenspace" data-project-title="GreenSpace Architects">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Template</span>
                 <h3>GreenSpace Architects</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="greenspace" data-project-title="GreenSpace Architects" title="Copy direct link to GreenSpace Architects" aria-label="Copy direct link to GreenSpace Architects">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Visual-first luxury portfolio web application for architecture firms and spatial designers. Features high-res project galleries, structural blueprints & spec sheets, category filtering, and client consultation request pipelines.</p>
             <div class="project-tags">
@@ -2041,13 +1944,19 @@ body {
           </a>
 
           <!-- Project: PixelWave Agency -->
-          <a href="https://digital-agency-portfolio.bubbleapps.io" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://digital-agency-portfolio.bubbleapps.io" target="_blank" rel="noopener" class="card project-card" id="pixelwave" data-project-id="pixelwave" data-project-title="PixelWave Agency">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Template</span>
                 <h3>PixelWave Agency</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="pixelwave" data-project-title="PixelWave Agency" title="Copy direct link to PixelWave Agency" aria-label="Copy direct link to PixelWave Agency">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>High-converting portfolio web app for software studios and digital agencies. Includes interactive case study modules, tiered service packages, client reviews, and custom lead generation forms.</p>
             <div class="project-tags">
@@ -2059,13 +1968,19 @@ body {
           </a>
 
           <!-- Project: AcreHedge -->
-          <a href="https://acrehedge.com" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://acrehedge.com" target="_blank" rel="noopener" class="card project-card" id="acrehedge" data-project-id="acrehedge" data-project-title="AcreHedge">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Platform</span>
                 <h3>AcreHedge</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="acrehedge" data-project-title="AcreHedge" title="Copy direct link to AcreHedge" aria-label="Copy direct link to AcreHedge">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Comprehensive agricultural risk management and FinTech hedging platform. Features real-time CBOT commodity market pricing, crop volatility prediction models, weather event insurance calculations, and Plaid financial integrations.</p>
             <div class="project-tags">
@@ -2077,13 +1992,19 @@ body {
           </a>
 
           <!-- Project: Format (Kultify) -->
-          <a href="https://kultify.io" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://kultify.io" target="_blank" rel="noopener" class="card project-card" id="format-kultify" data-project-id="format-kultify" data-project-title="Format (Kultify)">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Web3 Engine</span>
                 <h3>Format (Kultify)</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="format-kultify" data-project-title="Format (Kultify)" title="Copy direct link to Format (Kultify)" aria-label="Copy direct link to Format (Kultify)">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Community-driven Web3 collaborative publishing and storytelling platform. Enables modular world-building elements, character traits, and creative lore assets to be minted, owned, and traded as NFTs so all creators get compensated.</p>
             <div class="project-tags">
@@ -2095,13 +2016,19 @@ body {
           </a>
 
           <!-- Project: InkTradr -->
-          <a href="https://inktradr.co" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://inktradr.co" target="_blank" rel="noopener" class="card project-card" id="inktradr" data-project-id="inktradr" data-project-title="InkTradr">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Marketplace</span>
                 <h3>InkTradr</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="inktradr" data-project-title="InkTradr" title="Copy direct link to InkTradr" aria-label="Copy direct link to InkTradr">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Digital marketplace & licensing ecosystem for tattoo artists and flash art collectors. Built on Bubble.io with Polygon MATIC Web3 checkout, artist studio portals, custom ink booking requests, and style category curation.</p>
             <div class="project-tags">
@@ -2113,13 +2040,19 @@ body {
           </a>
 
           <!-- Project: SatoshiBet -->
-          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card" id="satoshibet" data-project-id="satoshibet" data-project-title="SatoshiBet">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live MVP</span>
                 <h3>SatoshiBet</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="satoshibet" data-project-title="SatoshiBet" title="Copy direct link to SatoshiBet" aria-label="Copy direct link to SatoshiBet">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Polymarket-style decentralized prediction market MVP built end-to-end on Bubble.io. Features real-time probability tracking, interactive odds charts, Yes/No binary outcome betting, and category filters (politics, finance, crypto).</p>
             <div class="project-tags">
@@ -2131,13 +2064,19 @@ body {
           </a>
 
           <!-- Project: AisleSync -->
-          <a href="https://www.aislesync.com" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://www.aislesync.com" target="_blank" rel="noopener" class="card project-card" id="aislesync" data-project-id="aislesync" data-project-title="AisleSync">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Mobile App</span>
                 <h3>AisleSync</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="aislesync" data-project-title="AisleSync" title="Copy direct link to AisleSync" aria-label="Copy direct link to AisleSync">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Smart grocery barcode scanner & shopping companion. Built with a high-performance Flutter mobile wrapper (Android & iOS) integrated over a Bubble.io backend, featuring multi-retailer inventory lookup and barcode camera scanning.</p>
             <div class="project-tags">
@@ -2149,13 +2088,19 @@ body {
           </a>
 
           <!-- Project: EVAS RO -->
-          <a href="https://evas.ro" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://evas.ro" target="_blank" rel="noopener" class="card project-card" id="evas-ro" data-project-id="evas-ro" data-project-title="EVAS RO">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Platform</span>
                 <h3>EVAS RO</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="evas-ro" data-project-title="EVAS RO" title="Copy direct link to EVAS RO" aria-label="Copy direct link to EVAS RO">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Mobile-first disability & space accessibility audit platform for field inspectors in Romania (Evaluare Voluntară Accesibilitate Spațiul). Features multi-step compliance evaluations, photo/video evidence uploads, and automated scoring.</p>
             <div class="project-tags">
@@ -2167,13 +2112,19 @@ body {
           </a>
 
           <!-- Project: EzLanguage (EzSchool) -->
-          <a href="https://ezlanguage.bubbleapps.io" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://ezlanguage.bubbleapps.io" target="_blank" rel="noopener" class="card project-card" id="ezlanguage" data-project-id="ezlanguage" data-project-title="EzLanguage (EzSchool)">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Platform</span>
                 <h3>EzLanguage (EzSchool)</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="ezlanguage" data-project-title="EzLanguage (EzSchool)" title="Copy direct link to EzLanguage (EzSchool)" aria-label="Copy direct link to EzLanguage (EzSchool)">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Interactive language learning and online tutor booking platform. Features audio pronunciation playback, gamified flashcards, tutor discovery with hourly rates, calendar scheduling, and structured study modules.</p>
             <div class="project-tags">
@@ -2185,13 +2136,19 @@ body {
           </a>
 
           <!-- Project: Moldova Customs Calculator -->
-          <a href="https://play.google.com/store/apps/details?id=md.customs.calculator" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://play.google.com/store/apps/details?id=md.customs.calculator" target="_blank" rel="noopener" class="card project-card" id="moldova-customs" data-project-id="moldova-customs" data-project-title="Moldova Customs Calculator">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Google Play App</span>
                 <h3>Moldova Customs Calculator</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="moldova-customs" data-project-title="Moldova Customs Calculator" title="Copy direct link to Moldova Customs Calculator" aria-label="Copy direct link to Moldova Customs Calculator">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Native Android application built in Kotlin calculating exact import customs taxes, VAT, and duty exemptions for international parcel shipments (Amazon, AliExpress, eBay, iHerb) into the Republic of Moldova.</p>
             <div class="project-tags">
@@ -2203,13 +2160,19 @@ body {
           </a>
 
           <!-- Project: Nothing Unwanted -->
-          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card" id="nothing-unwanted" data-project-id="nothing-unwanted" data-project-title="Nothing Unwanted">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Mobile App</span>
                 <h3>Nothing Unwanted</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="nothing-unwanted" data-project-title="Nothing Unwanted" title="Copy direct link to Nothing Unwanted" aria-label="Copy direct link to Nothing Unwanted">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Mobile-first artist & venue booking marketplace. Features an integrated persistent background audio player that streams uninterrupted across pages, gig application pipelines, dual-user workflows (Artists & Venues), and Stripe payouts.</p>
             <div class="project-tags">
@@ -2221,13 +2184,19 @@ body {
           </a>
 
           <!-- Project: SOMA Micronutrient & Bioflow Platform -->
-          <a href="https://play.google.com/store/apps/developer?id=MTLG+Labs" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://play.google.com/store/apps/developer?id=MTLG+Labs" target="_blank" rel="noopener" class="card project-card" id="soma-platform" data-project-id="soma-platform" data-project-title="SOMA Micronutrient & Bioflow Platform">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Google Play App</span>
                 <h3>SOMA Micronutrient & Bioflow Platform</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="soma-platform" data-project-title="SOMA Micronutrient & Bioflow Platform" title="Copy direct link to SOMA Micronutrient & Bioflow Platform" aria-label="Copy direct link to SOMA Micronutrient & Bioflow Platform">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Advanced bioflow analytics and micronutrient metabolic tracking platform for Android. Features integrated biometrics, circadian nutrient cycling algorithms, biomarker dashboards, and secure local health data encryption.</p>
             <div class="project-tags">
@@ -2239,13 +2208,19 @@ body {
           </a>
 
           <!-- Project: IdealToolkit -->
-          <a href="https://idealtoolkit.com/" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://idealtoolkit.com/" target="_blank" rel="noopener" class="card project-card" id="idealtoolkit" data-project-id="idealtoolkit" data-project-title="IdealToolkit">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live SaaS & Migration</span>
                 <h3>IdealToolkit</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="idealtoolkit" data-project-title="IdealToolkit" title="Copy direct link to IdealToolkit" aria-label="Copy direct link to IdealToolkit">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>All-in-one developer & product management toolkit. Originally architected and built end-to-end on Bubble.io by Alexandr Motologa, then successfully migrated, restructured, and scaled using React with Supabase backend.</p>
             <div class="project-tags">
@@ -2257,13 +2232,19 @@ body {
           </a>
 
           <!-- Project: Webotit -->
-          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card" id="webotit" data-project-id="webotit" data-project-title="Webotit">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Platform</span>
                 <h3>Webotit</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="webotit" data-project-title="Webotit" title="Copy direct link to Webotit" aria-label="Copy direct link to Webotit">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>AI-powered conversational agent & customer triage automation platform. Features custom multi-turn NLP dialog flows, omnichannel widget embedding, CRM webhooks, and intelligent escalation routing.</p>
             <div class="project-tags">
@@ -2275,13 +2256,19 @@ body {
           </a>
 
           <!-- Project: Ovidiu Platform -->
-          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card" id="ovidiu-platform" data-project-id="ovidiu-platform" data-project-title="Ovidiu Platform">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Platform</span>
                 <h3>Ovidiu Platform</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="ovidiu-platform" data-project-title="Ovidiu Platform" title="Copy direct link to Ovidiu Platform" aria-label="Copy direct link to Ovidiu Platform">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Custom enterprise workflow and intelligent digital operations platform. Engineered with dynamic role-based permissions, automated document processing, real-time analytics, and modular service extensions.</p>
             <div class="project-tags">
@@ -2293,13 +2280,19 @@ body {
           </a>
 
           <!-- Project: NFTyMuse -->
-          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card" id="nftymuse" data-project-id="nftymuse" data-project-title="NFTyMuse">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Web3</span>
                 <h3>NFTyMuse</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="nftymuse" data-project-title="NFTyMuse" title="Copy direct link to NFTyMuse" aria-label="Copy direct link to NFTyMuse">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Web3 virtual museum and digital art curation platform. Enables artists and collectors to create 3D exhibition spaces, curate NFT galleries, mint verified certificates, and trade on Ethereum & Polygon.</p>
             <div class="project-tags">
@@ -2311,13 +2304,19 @@ body {
           </a>
 
           <!-- Project: Transium -->
-          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card" id="transium" data-project-id="transium" data-project-title="Transium">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Platform</span>
                 <h3>Transium</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="transium" data-project-title="Transium" title="Copy direct link to Transium" aria-label="Copy direct link to Transium">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Cross-border localization, automated multi-lingual content syncing, and global transaction management pipeline with high-throughput API webhooks and distributed edge caching.</p>
             <div class="project-tags">
@@ -2329,13 +2328,19 @@ body {
           </a>
 
           <!-- Project: Prophet -->
-          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card" id="prophet" data-project-id="prophet" data-project-title="Prophet">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live AI Engine</span>
                 <h3>Prophet</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="prophet" data-project-title="Prophet" title="Copy direct link to Prophet" aria-label="Copy direct link to Prophet">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Decentralized predictive intelligence and statistical forecasting platform. Combines machine learning probability engines with collective sentiment markets and on-chain verification.</p>
             <div class="project-tags">
@@ -2347,13 +2352,19 @@ body {
           </a>
 
           <!-- Project: Odyssey -->
-          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card" id="odyssey" data-project-id="odyssey" data-project-title="Odyssey">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Ecosystem</span>
                 <h3>Odyssey</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="odyssey" data-project-title="Odyssey" title="Copy direct link to Odyssey" aria-label="Copy direct link to Odyssey">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Gamified Web3 community quest & engagement ecosystem. Features dynamic XP progression trees, smart contract-verified reward distribution, leaderboards, and Discord/Telegram bot synchronization.</p>
             <div class="project-tags">
@@ -2365,13 +2376,19 @@ body {
           </a>
 
           <!-- Project: Parabolica -->
-          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card" id="parabolica" data-project-id="parabolica" data-project-title="Parabolica">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live DeFi Terminal</span>
                 <h3>Parabolica</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="parabolica" data-project-title="Parabolica" title="Copy direct link to Parabolica" aria-label="Copy direct link to Parabolica">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>DeFi & algorithmic trading analytics terminal. Features real-time liquidity pool tracking, volume anomaly alerts, automated DEX order book charts, and multi-wallet portfolio PnL visualization.</p>
             <div class="project-tags">
@@ -2383,13 +2400,19 @@ body {
           </a>
 
           <!-- Project: Metaverde -->
-          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card" id="metaverde" data-project-id="metaverde" data-project-title="Metaverde">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live EcoTech</span>
                 <h3>Metaverde</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="metaverde" data-project-title="Metaverde" title="Copy direct link to Metaverde" aria-label="Copy direct link to Metaverde">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Green technology and tokenized carbon offset platform. Integrates verified environmental sensor data, transparent carbon credit retirement on-chain, and corporate ESG reporting dashboards.</p>
             <div class="project-tags">
@@ -2401,13 +2424,19 @@ body {
           </a>
 
           <!-- Project: MatterDust -->
-          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card" id="matterdust" data-project-id="matterdust" data-project-title="MatterDust">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Sandbox</span>
                 <h3>MatterDust</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="matterdust" data-project-title="MatterDust" title="Copy direct link to MatterDust" aria-label="Copy direct link to MatterDust">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Physics-inspired generative art engine and decentralized creative sandbox. Generates mathematically unique visual particles, real-time shaders, and generative mints stored on IPFS.</p>
             <div class="project-tags">
@@ -2419,13 +2448,19 @@ body {
           </a>
 
           <!-- Project: o1a Engine -->
-          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card" id="o1a" data-project-id="o1a" data-project-title="o1a Engine">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live AI Agent</span>
                 <h3>o1a Engine</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="o1a" data-project-title="o1a Engine" title="Copy direct link to o1a Engine" aria-label="Copy direct link to o1a Engine">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>High-performance autonomous AI agent orchestration engine. Features task decomposition, tool-calling pipelines, structured memory persistence, and automated code review workflows.</p>
             <div class="project-tags">
@@ -2437,13 +2472,19 @@ body {
           </a>
 
           <!-- Project: NuttiPetz -->
-          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card" id="nuttipetz" data-project-id="nuttipetz" data-project-title="NuttiPetz">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live GameFi</span>
                 <h3>NuttiPetz</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="nuttipetz" data-project-title="NuttiPetz" title="Copy direct link to NuttiPetz" aria-label="Copy direct link to NuttiPetz">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Gamified digital pet collectibles and breeding ecosystem. Features interactive on-chain genetics, dynamic evolutionary state updates, NFT pet trading, and mini-game integration.</p>
             <div class="project-tags">
@@ -2455,13 +2496,19 @@ body {
           </a>
 
           <!-- Project: CoVault -->
-          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card">
+          <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card project-card" id="covault" data-project-id="covault" data-project-title="CoVault">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge live-badge">Live Security Vault</span>
                 <h3>CoVault</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="covault" data-project-title="CoVault" title="Copy direct link to CoVault" aria-label="Copy direct link to CoVault">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>
             <p>Secure digital asset custody and multi-signature cryptographic vault. Features zero-knowledge access authorization, time-locked transaction approvals, and enterprise audit trails.</p>
             <div class="project-tags">
