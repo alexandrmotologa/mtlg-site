@@ -1169,6 +1169,10 @@ body {
   background: radial-gradient(circle at center, rgba(22, 27, 44, 0.8), rgba(6, 8, 14, 0.95));
   border: 1px solid rgba(255, 255, 255, 0.08);
   user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+  touch-action: pan-y;
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
 }
@@ -1193,6 +1197,10 @@ body {
   display: block;
   transition: transform 0.3s ease;
   pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 .product-card:hover .card-media img,
@@ -1213,6 +1221,10 @@ body {
   -webkit-overflow-scrolling: touch;
   cursor: grab;
   user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+  touch-action: pan-y;
   margin: 0;
   padding: 0;
 }
@@ -1237,6 +1249,10 @@ body {
   padding: 8px;
   box-sizing: border-box;
   position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 .carousel-slide img {
@@ -1249,6 +1265,10 @@ body {
   display: block;
   transition: transform 0.3s ease;
   pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 .carousel-btn {
@@ -1287,9 +1307,8 @@ body {
 
 .carousel-btn:hover {
   background: rgba(6, 182, 212, 0.9);
-  border-color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.6);
   transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 0 12px rgba(6, 182, 212, 0.6);
 }
 
 .carousel-indicators {
@@ -1300,8 +1319,8 @@ body {
   display: flex;
   gap: 5px;
   z-index: 10;
-  padding: 4px 9px;
-  background: rgba(5, 7, 14, 0.75);
+  padding: 3px 8px;
+  background: rgba(0, 0, 0, 0.65);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 9999px;
   backdrop-filter: blur(6px);
@@ -1313,32 +1332,31 @@ body {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.35);
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
 }
 
 .carousel-dot.active {
   background: #38bdf8;
-  width: 16px;
+  width: 14px;
   border-radius: 4px;
-  box-shadow: 0 0 8px rgba(56, 189, 248, 0.7);
 }
 
 .carousel-badge {
   position: absolute;
   top: 8px;
   right: 8px;
-  background: rgba(5, 7, 14, 0.8);
+  background: rgba(0, 0, 0, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #e2e8f0;
   font-family: var(--font-mono, monospace);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  padding: 3px 8px;
+  padding: 2px 7px;
   border-radius: 6px;
-  z-index: 10;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(4px);
+  z-index: 5;
+  pointer-events: none;
 }
-
 </style>
 </head>
 <body>
@@ -1890,10 +1908,10 @@ body {
 
         <div class="projects-grid">
           <!-- Project: MCP Studio -->
-          <a href="https://mcp.mtlglabs.space" target="_blank" rel="noopener" class="card project-card" id="mcp-studio" data-project-id="mcp-studio" data-project-title="MCP Studio">
+          <a href="https://github.com/alexandrmotologa/mcp-studio" target="_blank" rel="noopener" class="card project-card" id="mcp-studio" data-project-id="mcp-studio" data-project-title="MCP Studio">
             <div class="project-header">
               <div class="project-title-group">
-                <span class="project-badge live-badge">Live Desktop Suite</span>
+                <span class="project-badge dev-badge">In Active Dev</span>
                 <h3>MCP Studio</h3>
               </div>
               <div class="project-header-actions">
@@ -1904,44 +1922,8 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="5">
-              <div class="carousel-track">
-                
-                <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/mcp-studio-1.png" alt="MCP Studio Screenshot Preview 1" loading="lazy" draggable="false" />
-                </div>
-                <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/mcp-studio-2.png" alt="MCP Studio Screenshot Preview 2" loading="lazy" draggable="false" />
-                </div>
-                <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/mcp-studio-3.jpg" alt="MCP Studio Screenshot Preview 3" loading="lazy" draggable="false" />
-                </div>
-                <div class="carousel-slide" data-slide-index="3">
-                  <img src="images/mcp-studio-4.png" alt="MCP Studio Screenshot Preview 4" loading="lazy" draggable="false" />
-                </div>
-                <div class="carousel-slide" data-slide-index="4">
-                  <img src="images/mcp-studio-5.png" alt="MCP Studio Screenshot Preview 5" loading="lazy" draggable="false" />
-                </div>
-              </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
-              </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
-              </button>
-              <div class="carousel-indicators">
-                
-                <span class="carousel-dot active" data-dot-index="0"></span>
-                <span class="carousel-dot " data-dot-index="1"></span>
-                <span class="carousel-dot " data-dot-index="2"></span>
-                <span class="carousel-dot " data-dot-index="3"></span>
-                <span class="carousel-dot " data-dot-index="4"></span>
-              </div>
-              <div class="carousel-badge">1/5</div>
-            </div>
-            <p>The definitive desktop IDE, automated testing suite & AI agent simulator for Model Context Protocol (MCP): dynamic schema forms, smart mock auto-filler, multi-LLM arena, live JSON-RPC traffic streaming, and 1-click Cursor & Claude export.</p>
+            <p>The all-in-one desktop IDE & visual inspector for Model Context Protocol (MCP): auto-discovery, interactive tool testing, multi-LLM agent simulator, live JSON-RPC traffic streaming, and 1-click Cursor & Claude export.</p>
             <div class="project-tags">
-              <span class="mini-tag">Production App</span>
               <span class="mini-tag">Electron / React 19</span>
               <span class="mini-tag">MCP Protocol</span>
               <span class="mini-tag">Multi-LLM</span>
@@ -1964,7 +1946,7 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-media">
+            <div class="project-media" draggable="false">
               <img src="images/snapframe-1.png" alt="SnapFrame.store Screenshot Preview" loading="lazy" draggable="false" />
             </div>
             <p>Studio-grade App Store & Google Play screenshot generator powered by AI Vision Auto-Pilot, 3D device frames, video previews, and Fastlane ASO metadata automation.</p>
@@ -1991,22 +1973,22 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="5">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="5" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/oneira-web-1.png" alt="Oneira Space (Web) Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/oneira-web-2.png" alt="Oneira Space (Web) Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/oneira-web-3.png" alt="Oneira Space (Web) Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="3">
+                <div class="carousel-slide" data-slide-index="3" draggable="false">
                   <img src="images/oneira-web-4.png" alt="Oneira Space (Web) Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="4">
+                <div class="carousel-slide" data-slide-index="4" draggable="false">
                   <img src="images/oneira-web-5.png" alt="Oneira Space (Web) Screenshot Preview 5" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -2051,22 +2033,22 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="5">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="5" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/oneira-app-1.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/oneira-app-2.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/oneira-app-3.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="3">
+                <div class="carousel-slide" data-slide-index="3" draggable="false">
                   <img src="images/oneira-app-4.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="4">
+                <div class="carousel-slide" data-slide-index="4" draggable="false">
                   <img src="images/oneira-app-5.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 5" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -2110,6 +2092,57 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
+            <div class="project-carousel" data-total="9" draggable="false">
+              <div class="carousel-track" draggable="false">
+                
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
+                  <img src="images/bubble-dev-studio-1.png" alt="Bubble.io Dev Studio Screenshot Preview 1" loading="lazy" draggable="false" />
+                </div>
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
+                  <img src="images/bubble-dev-studio-2.png" alt="Bubble.io Dev Studio Screenshot Preview 2" loading="lazy" draggable="false" />
+                </div>
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
+                  <img src="images/bubble-dev-studio-3.png" alt="Bubble.io Dev Studio Screenshot Preview 3" loading="lazy" draggable="false" />
+                </div>
+                <div class="carousel-slide" data-slide-index="3" draggable="false">
+                  <img src="images/bubble-dev-studio-4.png" alt="Bubble.io Dev Studio Screenshot Preview 4" loading="lazy" draggable="false" />
+                </div>
+                <div class="carousel-slide" data-slide-index="4" draggable="false">
+                  <img src="images/bubble-dev-studio-5.png" alt="Bubble.io Dev Studio Screenshot Preview 5" loading="lazy" draggable="false" />
+                </div>
+                <div class="carousel-slide" data-slide-index="5" draggable="false">
+                  <img src="images/bubble-dev-studio-6.png" alt="Bubble.io Dev Studio Screenshot Preview 6" loading="lazy" draggable="false" />
+                </div>
+                <div class="carousel-slide" data-slide-index="6" draggable="false">
+                  <img src="images/bubble-dev-studio-7.png" alt="Bubble.io Dev Studio Screenshot Preview 7" loading="lazy" draggable="false" />
+                </div>
+                <div class="carousel-slide" data-slide-index="7" draggable="false">
+                  <img src="images/bubble-dev-studio-8.png" alt="Bubble.io Dev Studio Screenshot Preview 8" loading="lazy" draggable="false" />
+                </div>
+                <div class="carousel-slide" data-slide-index="8" draggable="false">
+                  <img src="images/bubble-dev-studio-9.png" alt="Bubble.io Dev Studio Screenshot Preview 9" loading="lazy" draggable="false" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
+                <span class="carousel-dot " data-dot-index="3"></span>
+                <span class="carousel-dot " data-dot-index="4"></span>
+                <span class="carousel-dot " data-dot-index="5"></span>
+                <span class="carousel-dot " data-dot-index="6"></span>
+                <span class="carousel-dot " data-dot-index="7"></span>
+                <span class="carousel-dot " data-dot-index="8"></span>
+              </div>
+              <div class="carousel-badge">1/9</div>
+            </div>
             <p>All-in-one Developer Studio & Desktop GUI for Bubble.io: automated backups, schema inspection, dead code audit, AI translation, and visual QA testing.</p>
             <div class="project-tags">
               <span class="mini-tag">Electron</span>
@@ -2134,13 +2167,13 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="2">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="2" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/bubble-cli-1.jpg" alt="bubble-io-cli Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/bubble-cli-2.jpg" alt="bubble-io-cli Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -2181,16 +2214,16 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="3">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="3" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/bubble-ai-translator-1.png" alt="bubble-io-ai-translator Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/bubble-ai-translator-2.png" alt="bubble-io-ai-translator Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/bubble-ai-translator-3.png" alt="bubble-io-ai-translator Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -2232,16 +2265,16 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="3">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="3" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/bubble-dead-code-detector-1.png" alt="bubble-io-dead-code-detector Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/bubble-dead-code-detector-2.png" alt="bubble-io-dead-code-detector Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/bubble-dead-code-detector-3.png" alt="bubble-io-dead-code-detector Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -2283,13 +2316,13 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="2">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="2" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/bubble-visual-tester-1.png" alt="bubble-io-visual-tester Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/bubble-visual-tester-2.png" alt="bubble-io-visual-tester Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -2330,19 +2363,19 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="4">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="4" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/alu-traumterrasse-1.jpg" alt="Alu-Traumterrasse Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/alu-traumterrasse-2.jpg" alt="Alu-Traumterrasse Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/alu-traumterrasse-3.png" alt="Alu-Traumterrasse Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="3">
+                <div class="carousel-slide" data-slide-index="3" draggable="false">
                   <img src="images/alu-traumterrasse-4.png" alt="Alu-Traumterrasse Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -2385,22 +2418,22 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="5">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="5" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/quiz2coin-1.png" alt="Quiz2Coin Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/quiz2coin-2.png" alt="Quiz2Coin Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/quiz2coin-3.png" alt="Quiz2Coin Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="3">
+                <div class="carousel-slide" data-slide-index="3" draggable="false">
                   <img src="images/quiz2coin-4.png" alt="Quiz2Coin Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="4">
+                <div class="carousel-slide" data-slide-index="4" draggable="false">
                   <img src="images/quiz2coin-5.png" alt="Quiz2Coin Screenshot Preview 5" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -2468,22 +2501,22 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="5">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="5" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/telequiz-1.png" alt="TeleQuiz Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/telequiz-2.png" alt="TeleQuiz Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/telequiz-3.png" alt="TeleQuiz Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="3">
+                <div class="carousel-slide" data-slide-index="3" draggable="false">
                   <img src="images/telequiz-4.png" alt="TeleQuiz Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="4">
+                <div class="carousel-slide" data-slide-index="4" draggable="false">
                   <img src="images/telequiz-5.png" alt="TeleQuiz Screenshot Preview 5" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -2527,16 +2560,16 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="3">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="3" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/atcollege-1.png" alt="atCollege.com Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/atcollege-2.png" alt="atCollege.com Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/atcollege-3.png" alt="atCollege.com Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -2578,16 +2611,16 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="3">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="3" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/nxtchapter-1.png" alt="Nxt Chapter Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/nxtchapter-2.png" alt="Nxt Chapter Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/nxtchapter-3.png" alt="Nxt Chapter Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -2629,19 +2662,19 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="4">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="4" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/burgercraft-1.png" alt="BurgerCraft Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/burgercraft-2.png" alt="BurgerCraft Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/burgercraft-3.png" alt="BurgerCraft Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="3">
+                <div class="carousel-slide" data-slide-index="3" draggable="false">
                   <img src="images/burgercraft-4.png" alt="BurgerCraft Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -2684,16 +2717,16 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="3">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="3" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/greenspace-1.jpg" alt="GreenSpace Architects Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/greenspace-2.png" alt="GreenSpace Architects Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/greenspace-3.jpg" alt="GreenSpace Architects Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -2735,19 +2768,19 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="4">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="4" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/pixelwave-1.png" alt="PixelWave Agency Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/pixelwave-2.png" alt="PixelWave Agency Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/pixelwave-3.jpg" alt="PixelWave Agency Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="3">
+                <div class="carousel-slide" data-slide-index="3" draggable="false">
                   <img src="images/pixelwave-4.png" alt="PixelWave Agency Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -2790,16 +2823,16 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="3">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="3" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/acrehedge-1.png" alt="AcreHedge Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/acrehedge-2.png" alt="AcreHedge Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/acrehedge-3.png" alt="AcreHedge Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -2841,19 +2874,19 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="4">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="4" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/format-kultify-1.png" alt="Format (Kultify) Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/format-kultify-2.png" alt="Format (Kultify) Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/format-kultify-3.png" alt="Format (Kultify) Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="3">
+                <div class="carousel-slide" data-slide-index="3" draggable="false">
                   <img src="images/format-kultify-4.png" alt="Format (Kultify) Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -2896,7 +2929,7 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-media">
+            <div class="project-media" draggable="false">
               <img src="images/inktradr-1.png" alt="InkTradr Screenshot Preview" loading="lazy" draggable="false" />
             </div>
             <p>Digital marketplace & licensing ecosystem for tattoo artists and flash art collectors. Built on Bubble.io with Polygon MATIC Web3 checkout, artist studio portals, custom ink booking requests, and style category curation.</p>
@@ -2923,22 +2956,22 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="5">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="5" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/satoshibet-1.png" alt="SatoshiBet Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/satoshibet-2.png" alt="SatoshiBet Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/satoshibet-3.png" alt="SatoshiBet Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="3">
+                <div class="carousel-slide" data-slide-index="3" draggable="false">
                   <img src="images/satoshibet-4.png" alt="SatoshiBet Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="4">
+                <div class="carousel-slide" data-slide-index="4" draggable="false">
                   <img src="images/satoshibet-5.png" alt="SatoshiBet Screenshot Preview 5" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -2982,16 +3015,16 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="3">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="3" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/aislesync-1.png" alt="AisleSync Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/aislesync-2.png" alt="AisleSync Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/aislesync-3.png" alt="AisleSync Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -3033,22 +3066,22 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="5">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="5" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/evas-ro-1.png" alt="EVAS RO Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/evas-ro-2.png" alt="EVAS RO Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/evas-ro-3.png" alt="EVAS RO Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="3">
+                <div class="carousel-slide" data-slide-index="3" draggable="false">
                   <img src="images/evas-ro-4.png" alt="EVAS RO Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="4">
+                <div class="carousel-slide" data-slide-index="4" draggable="false">
                   <img src="images/evas-ro-5.png" alt="EVAS RO Screenshot Preview 5" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -3092,13 +3125,13 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="2">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="2" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/ezlanguage-1.png" alt="EzLanguage (EzSchool) Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/ezlanguage-2.png" alt="EzLanguage (EzSchool) Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -3163,16 +3196,16 @@ body {
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
             </div>
-            <div class="project-carousel" data-total="3">
-              <div class="carousel-track">
+            <div class="project-carousel" data-total="3" draggable="false">
+              <div class="carousel-track" draggable="false">
                 
-                <div class="carousel-slide" data-slide-index="0">
+                <div class="carousel-slide" data-slide-index="0" draggable="false">
                   <img src="images/nothing-unwanted-1.png" alt="Nothing Unwanted Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="1">
+                <div class="carousel-slide" data-slide-index="1" draggable="false">
                   <img src="images/nothing-unwanted-2.png" alt="Nothing Unwanted Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
-                <div class="carousel-slide" data-slide-index="2">
+                <div class="carousel-slide" data-slide-index="2" draggable="false">
                   <img src="images/nothing-unwanted-3.png" alt="Nothing Unwanted Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
               </div>
@@ -3676,8 +3709,11 @@ function setupAllCarousels() {
 
     let isPointerDown = false;
     let startPointerX = 0;
+    let startPointerY = 0;
     let startScrollLeft = 0;
     let hasMoved = false;
+    let lastDragTime = 0;
+    let activePointerId = null;
 
     // Real-time Scroll Listener for Indicators & Badge
     const onTrackScroll = () => {
@@ -3728,9 +3764,18 @@ function setupAllCarousels() {
       isPointerDown = true;
       hasMoved = false;
       startPointerX = e.clientX;
+      startPointerY = e.clientY;
       startScrollLeft = track.scrollLeft;
+      activePointerId = e.pointerId;
+
       track.style.scrollBehavior = 'auto';
       track.style.scrollSnapType = 'none';
+      track.style.cursor = 'grabbing';
+
+      // Crucial: Prevent native HTML5 link/image drag on mouse pointers
+      if (e.pointerType === 'mouse') {
+        e.preventDefault();
+      }
 
       try {
         track.setPointerCapture(e.pointerId);
@@ -3739,48 +3784,76 @@ function setupAllCarousels() {
 
     track.addEventListener('pointermove', (e) => {
       if (!isPointerDown) return;
+      if (activePointerId !== null && e.pointerId !== activePointerId) return;
+
       const deltaX = e.clientX - startPointerX;
-      if (Math.abs(deltaX) > 4) {
+      const deltaY = e.clientY - startPointerY;
+
+      if (Math.abs(deltaX) > 6 || Math.abs(deltaX) > Math.abs(deltaY)) {
         hasMoved = true;
+        lastDragTime = Date.now();
+        track.scrollLeft = startScrollLeft - deltaX;
       }
-      track.scrollLeft = startScrollLeft - deltaX;
     });
 
     const handlePointerEnd = (e) => {
       if (!isPointerDown) return;
+      if (e && e.pointerId !== undefined && activePointerId !== null && e.pointerId !== activePointerId) return;
+
       isPointerDown = false;
       track.style.scrollBehavior = 'smooth';
       track.style.scrollSnapType = 'x mandatory';
+      track.style.cursor = '';
 
       const slideWidth = track.clientWidth || 1;
-      const targetIndex = Math.round(track.scrollLeft / slideWidth);
+      const startIndex = Math.round(startScrollLeft / slideWidth);
+      const endX = (e && e.clientX !== undefined) ? e.clientX : startPointerX;
+      const deltaX = endX - startPointerX;
+
+      // Sensitive threshold: dragging 35px or more advances to next/prev slide
+      let targetIndex = startIndex;
+      if (deltaX < -35) {
+        const slidesMoved = Math.max(1, Math.round(Math.abs(deltaX) / slideWidth));
+        targetIndex = startIndex + slidesMoved;
+      } else if (deltaX > 35) {
+        const slidesMoved = Math.max(1, Math.round(Math.abs(deltaX) / slideWidth));
+        targetIndex = startIndex - slidesMoved;
+      } else {
+        targetIndex = Math.round(track.scrollLeft / slideWidth);
+      }
+
+      targetIndex = Math.max(0, Math.min(targetIndex, total - 1));
       track.scrollTo({ left: targetIndex * slideWidth, behavior: 'smooth' });
 
       try {
-        if (track.hasPointerCapture(e.pointerId)) {
-          track.releasePointerCapture(e.pointerId);
+        if (activePointerId !== null && track.hasPointerCapture(activePointerId)) {
+          track.releasePointerCapture(activePointerId);
         }
       } catch (err) {}
+      activePointerId = null;
 
       setTimeout(() => {
         hasMoved = false;
-      }, 120);
+      }, 300);
     };
 
     track.addEventListener('pointerup', handlePointerEnd);
     track.addEventListener('pointercancel', handlePointerEnd);
+    track.addEventListener('lostpointercapture', handlePointerEnd);
+
+    // Prevent any native HTML5 drag on track and carousel
     track.addEventListener('dragstart', (e) => e.preventDefault());
+    carousel.addEventListener('dragstart', (e) => e.preventDefault());
 
     // Intercept accidental link clicks if user was dragging
     carousel.addEventListener('click', (e) => {
-      if (hasMoved) {
+      if (hasMoved || (Date.now() - lastDragTime < 400)) {
         e.preventDefault();
         e.stopPropagation();
       }
     }, true);
   });
 }
-
 // Auto-run on load and whenever DOM changes
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', setupAllCarousels);

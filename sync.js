@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const rootDir = __dirname;
+const rootDir = fs.existsSync(path.join(__dirname, 'mtlg-site')) ? __dirname : path.resolve(__dirname, '..');
 const projectsJsonPath = path.join(rootDir, 'projects.json');
 const labsDir = path.join(rootDir, 'mtlglabs-space');
 const siteDir = path.join(rootDir, 'mtlg-site');
@@ -39,22 +39,22 @@ function generateMediaHtml(p, isSite = false) {
 
   if (p.images.length === 1) {
     const mediaClass = isSite ? 'project-media' : 'card-media';
-    return `\n            <div class="${mediaClass}">
+    return `\n            <div class="${mediaClass}" draggable="false">
               <img src="${p.images[0]}" alt="${p.title} Screenshot Preview" loading="lazy" draggable="false" />
             </div>`;
   }
 
   const carouselClass = isSite ? 'project-carousel' : 'card-carousel';
   const slidesHtml = p.images.map((img, idx) => `
-                <div class="carousel-slide" data-slide-index="${idx}">
+                <div class="carousel-slide" data-slide-index="${idx}" draggable="false">
                   <img src="${img}" alt="${p.title} Screenshot Preview ${idx + 1}" loading="lazy" draggable="false" />
                 </div>`).join('');
 
   const dotsHtml = p.images.map((_, idx) => `
                 <span class="carousel-dot ${idx === 0 ? 'active' : ''}" data-dot-index="${idx}"></span>`).join('');
 
-  return `\n            <div class="${carouselClass}" data-total="${p.images.length}">
-              <div class="carousel-track">
+  return `\n            <div class="${carouselClass}" data-total="${p.images.length}" draggable="false">
+              <div class="carousel-track" draggable="false">
                 ${slidesHtml}
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">

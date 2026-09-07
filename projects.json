@@ -4,40 +4,29 @@
     "title": "MCP Studio",
     "category": "devtools",
     "badgeLabs": {
-      "text": "Live Desktop Suite",
-      "type": "live"
+      "text": "In Active Dev",
+      "type": "dev"
     },
     "badgeSite": {
-      "text": "Live Desktop Suite",
-      "type": "live"
+      "text": "In Active Dev",
+      "type": "dev"
     },
     "catPill": "AI & Developer Studio",
-    "desc": "The definitive desktop IDE, automated testing suite & AI agent simulator for Model Context Protocol (MCP): dynamic schema forms, smart mock auto-filler, multi-LLM arena, live JSON-RPC traffic streaming, and 1-click Cursor & Claude export.",
+    "desc": "The all-in-one desktop IDE & visual inspector for Model Context Protocol (MCP): auto-discovery, interactive tool testing, multi-LLM agent simulator, live JSON-RPC traffic streaming, and 1-click Cursor & Claude export.",
     "tagsLabs": [
-      "Production App",
       "Electron / React 19",
       "Model Context Protocol",
       "Multi-LLM",
       "DevOps & QA"
     ],
     "tagsSite": [
-      "Production App",
       "Electron / React 19",
       "MCP Protocol",
       "Multi-LLM",
       "Developer Tools"
     ],
-    "url": "https://mcp.mtlglabs.space",
-    "releases": "https://github.com/alexandrmotologa/mcp-studio/releases",
-    "github": "https://github.com/alexandrmotologa/mcp-studio",
-    "images": [
-      "images/mcp-studio-1.png",
-      "images/mcp-studio-2.png",
-      "images/mcp-studio-3.jpg",
-      "images/mcp-studio-4.png",
-      "images/mcp-studio-5.png"
-    ],
-    "image": "images/mcp-studio-1.png"
+    "url": "https://github.com/alexandrmotologa/mcp-studio",
+    "github": "https://github.com/alexandrmotologa/mcp-studio"
   },
   {
     "id": "snapframe",
@@ -173,7 +162,19 @@
       "DevOps"
     ],
     "url": "https://github.com/alexandrmotologa/bubble-io-dev-studio",
-    "releases": "https://github.com/alexandrmotologa/bubble-io-dev-studio/releases/latest"
+    "releases": "https://github.com/alexandrmotologa/bubble-io-dev-studio/releases/latest",
+    "images": [
+      "images/bubble-dev-studio-1.png",
+      "images/bubble-dev-studio-2.png",
+      "images/bubble-dev-studio-3.png",
+      "images/bubble-dev-studio-4.png",
+      "images/bubble-dev-studio-5.png",
+      "images/bubble-dev-studio-6.png",
+      "images/bubble-dev-studio-7.png",
+      "images/bubble-dev-studio-8.png",
+      "images/bubble-dev-studio-9.png"
+    ],
+    "image": "images/bubble-dev-studio-1.png"
   },
   {
     "id": "bubble-cli",
