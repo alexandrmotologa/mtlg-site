@@ -29,7 +29,15 @@
     ],
     "url": "https://mcp.mtlglabs.space",
     "releases": "https://github.com/alexandrmotologa/mcp-studio/releases",
-    "github": "https://github.com/alexandrmotologa/mcp-studio"
+    "github": "https://github.com/alexandrmotologa/mcp-studio",
+    "images": [
+      "images/mcp-studio-1.png",
+      "images/mcp-studio-2.png",
+      "images/mcp-studio-3.jpg",
+      "images/mcp-studio-4.png",
+      "images/mcp-studio-5.png"
+    ],
+    "image": "images/mcp-studio-1.png"
   },
   {
     "id": "snapframe",
@@ -58,7 +66,11 @@
       "ASO Suite"
     ],
     "url": "https://snapframe.store",
-    "github": "https://github.com/alexandrmotologa/snapframe.store"
+    "github": "https://github.com/alexandrmotologa/snapframe.store",
+    "images": [
+      "images/snapframe-1.png"
+    ],
+    "image": "images/snapframe-1.png"
   },
   {
     "id": "oneira-web",
@@ -88,7 +100,15 @@
       "Mental Health AI",
       "Practitioner Portal"
     ],
-    "url": "https://www.oneira.space"
+    "url": "https://www.oneira.space",
+    "images": [
+      "images/oneira-web-1.png",
+      "images/oneira-web-2.png",
+      "images/oneira-web-3.png",
+      "images/oneira-web-4.png",
+      "images/oneira-web-5.png"
+    ],
+    "image": "images/oneira-web-1.png"
   },
   {
     "id": "oneira-app",
@@ -116,7 +136,15 @@
       "Mood & CBT Tools",
       "Google Play"
     ],
-    "url": "https://play.google.com/store/apps/details?id=space.oneira.app"
+    "url": "https://play.google.com/store/apps/details?id=space.oneira.app",
+    "images": [
+      "images/oneira-app-1.png",
+      "images/oneira-app-2.png",
+      "images/oneira-app-3.png",
+      "images/oneira-app-4.png",
+      "images/oneira-app-5.png"
+    ],
+    "image": "images/oneira-app-1.png"
   },
   {
     "id": "bubble-dev-studio",
@@ -174,7 +202,12 @@
       "CI/CD"
     ],
     "url": "https://github.com/alexandrmotologa/bubble-io-cli",
-    "npm": "https://www.npmjs.com/package/bubble-io-cli"
+    "npm": "https://www.npmjs.com/package/bubble-io-cli",
+    "images": [
+      "images/bubble-cli-1.jpg",
+      "images/bubble-cli-2.jpg"
+    ],
+    "image": "images/bubble-cli-1.jpg"
   },
   {
     "id": "bubble-ai-translator",
@@ -204,7 +237,13 @@
       "NPM Package"
     ],
     "url": "https://github.com/alexandrmotologa/bubble-io-ai-translator",
-    "npm": "https://www.npmjs.com/package/bubble-io-ai-translator"
+    "npm": "https://www.npmjs.com/package/bubble-io-ai-translator",
+    "images": [
+      "images/bubble-ai-translator-1.png",
+      "images/bubble-ai-translator-2.png",
+      "images/bubble-ai-translator-3.png"
+    ],
+    "image": "images/bubble-ai-translator-1.png"
   },
   {
     "id": "bubble-dead-code-detector",
@@ -233,7 +272,13 @@
       "NPM Package"
     ],
     "url": "https://github.com/alexandrmotologa/bubble-io-dead-code-detector",
-    "npm": "https://www.npmjs.com/package/bubble-io-dead-code-detector"
+    "npm": "https://www.npmjs.com/package/bubble-io-dead-code-detector",
+    "images": [
+      "images/bubble-dead-code-detector-1.png",
+      "images/bubble-dead-code-detector-2.png",
+      "images/bubble-dead-code-detector-3.png"
+    ],
+    "image": "images/bubble-dead-code-detector-1.png"
   },
   {
     "id": "bubble-visual-tester",
@@ -261,7 +306,12 @@
       "AWS S3 Sync",
       "CI/CD Gate"
     ],
-    "url": "https://github.com/alexandrmotologa/bubble-io-visual-tester"
+    "url": "https://github.com/alexandrmotologa/bubble-io-visual-tester",
+    "images": [
+      "images/bubble-visual-tester-1.png",
+      "images/bubble-visual-tester-2.png"
+    ],
+    "image": "images/bubble-visual-tester-1.png"
   },
   {
     "id": "alu-traumterrasse",
@@ -289,7 +339,14 @@
       "Custom Configurator",
       "Admin Panel"
     ],
-    "url": "https://alu-traumterrasse.de"
+    "url": "https://alu-traumterrasse.de",
+    "images": [
+      "images/alu-traumterrasse-1.jpg",
+      "images/alu-traumterrasse-2.jpg",
+      "images/alu-traumterrasse-3.png",
+      "images/alu-traumterrasse-4.png"
+    ],
+    "image": "images/alu-traumterrasse-1.jpg"
   },
   {
     "id": "quiz2coin",
@@ -317,7 +374,15 @@
       "USDC Rewards",
       "Multi-Rail Pay"
     ],
-    "url": "https://quiz2coin.com"
+    "url": "https://quiz2coin.com",
+    "images": [
+      "images/quiz2coin-1.png",
+      "images/quiz2coin-2.png",
+      "images/quiz2coin-3.png",
+      "images/quiz2coin-4.png",
+      "images/quiz2coin-5.png"
+    ],
+    "image": "images/quiz2coin-1.png"
   },
   {
     "id": "one2all",
@@ -381,7 +446,15 @@
     "extraLink": {
       "label": "TeleStore",
       "url": "https://tele.store"
-    }
+    },
+    "images": [
+      "images/telequiz-1.png",
+      "images/telequiz-2.png",
+      "images/telequiz-3.png",
+      "images/telequiz-4.png",
+      "images/telequiz-5.png"
+    ],
+    "image": "images/telequiz-1.png"
   },
   {
     "id": "atcollege",
@@ -410,7 +483,13 @@
       "Groups & Events"
     ],
     "url": "https://atcollege.com",
-    "github": "https://github.com/chusla/atcollege"
+    "github": "https://github.com/chusla/atcollege",
+    "images": [
+      "images/atcollege-1.png",
+      "images/atcollege-2.png",
+      "images/atcollege-3.png"
+    ],
+    "image": "images/atcollege-1.png"
   },
   {
     "id": "nxtchapter",
@@ -438,7 +517,13 @@
       "Multi-Vendor E-Commerce",
       "Stripe Payments"
     ],
-    "url": "https://nxtchapter.com.au"
+    "url": "https://nxtchapter.com.au",
+    "images": [
+      "images/nxtchapter-1.png",
+      "images/nxtchapter-2.png",
+      "images/nxtchapter-3.png"
+    ],
+    "image": "images/nxtchapter-1.png"
   },
   {
     "id": "burgercraft",
@@ -466,7 +551,14 @@
       "Kitchen Admin Portal",
       "Stripe API"
     ],
-    "url": "https://menu-and-delivery.bubbleapps.io/?page=home"
+    "url": "https://menu-and-delivery.bubbleapps.io/?page=home",
+    "images": [
+      "images/burgercraft-1.png",
+      "images/burgercraft-2.png",
+      "images/burgercraft-3.png",
+      "images/burgercraft-4.png"
+    ],
+    "image": "images/burgercraft-1.png"
   },
   {
     "id": "greenspace",
@@ -494,7 +586,13 @@
       "High-Res Media",
       "Lead Capture"
     ],
-    "url": "https://architecture-company.bubbleapps.io"
+    "url": "https://architecture-company.bubbleapps.io",
+    "images": [
+      "images/greenspace-1.jpg",
+      "images/greenspace-2.png",
+      "images/greenspace-3.jpg"
+    ],
+    "image": "images/greenspace-1.jpg"
   },
   {
     "id": "pixelwave",
@@ -522,7 +620,14 @@
       "Interactive UI",
       "Lead Generation"
     ],
-    "url": "https://digital-agency-portfolio.bubbleapps.io"
+    "url": "https://digital-agency-portfolio.bubbleapps.io",
+    "images": [
+      "images/pixelwave-1.png",
+      "images/pixelwave-2.png",
+      "images/pixelwave-3.jpg",
+      "images/pixelwave-4.png"
+    ],
+    "image": "images/pixelwave-1.png"
   },
   {
     "id": "acrehedge",
@@ -550,7 +655,13 @@
       "Plaid Banking API",
       "Hedging Engine"
     ],
-    "url": "https://acrehedge.com"
+    "url": "https://acrehedge.com",
+    "images": [
+      "images/acrehedge-1.png",
+      "images/acrehedge-2.png",
+      "images/acrehedge-3.png"
+    ],
+    "image": "images/acrehedge-1.png"
   },
   {
     "id": "format-kultify",
@@ -578,7 +689,14 @@
       "Collaborative Lore",
       "Creator Royalties"
     ],
-    "url": "https://kultify.io"
+    "url": "https://kultify.io",
+    "images": [
+      "images/format-kultify-1.png",
+      "images/format-kultify-2.png",
+      "images/format-kultify-3.png",
+      "images/format-kultify-4.png"
+    ],
+    "image": "images/format-kultify-1.png"
   },
   {
     "id": "inktradr",
@@ -606,7 +724,11 @@
       "Art Licensing",
       "Marketplace"
     ],
-    "url": "https://inktradr.co"
+    "url": "https://inktradr.co",
+    "images": [
+      "images/inktradr-1.png"
+    ],
+    "image": "images/inktradr-1.png"
   },
   {
     "id": "satoshibet",
@@ -634,7 +756,15 @@
       "Real-Time Odds",
       "Mobile UI"
     ],
-    "url": "https://mtlglabs.space"
+    "url": "https://mtlglabs.space",
+    "images": [
+      "images/satoshibet-1.png",
+      "images/satoshibet-2.png",
+      "images/satoshibet-3.png",
+      "images/satoshibet-4.png",
+      "images/satoshibet-5.png"
+    ],
+    "image": "images/satoshibet-1.png"
   },
   {
     "id": "aislesync",
@@ -662,7 +792,13 @@
       "Barcode Scanning",
       "Push Notifications"
     ],
-    "url": "https://www.aislesync.com"
+    "url": "https://www.aislesync.com",
+    "images": [
+      "images/aislesync-1.png",
+      "images/aislesync-2.png",
+      "images/aislesync-3.png"
+    ],
+    "image": "images/aislesync-1.png"
   },
   {
     "id": "evas-ro",
@@ -690,7 +826,15 @@
       "Mobile Field App",
       "Compliance Scoring"
     ],
-    "url": "https://evas.ro"
+    "url": "https://evas.ro",
+    "images": [
+      "images/evas-ro-1.png",
+      "images/evas-ro-2.png",
+      "images/evas-ro-3.png",
+      "images/evas-ro-4.png",
+      "images/evas-ro-5.png"
+    ],
+    "image": "images/evas-ro-1.png"
   },
   {
     "id": "ezlanguage",
@@ -718,7 +862,12 @@
       "Audio Playback",
       "Scheduling & Bookings"
     ],
-    "url": "https://ezlanguage.bubbleapps.io"
+    "url": "https://ezlanguage.bubbleapps.io",
+    "images": [
+      "images/ezlanguage-1.png",
+      "images/ezlanguage-2.png"
+    ],
+    "image": "images/ezlanguage-1.png"
   },
   {
     "id": "moldova-customs",
@@ -774,7 +923,13 @@
       "Geolocation & Booking",
       "Stripe API"
     ],
-    "url": "https://mtlglabs.space"
+    "url": "https://mtlglabs.space",
+    "images": [
+      "images/nothing-unwanted-1.png",
+      "images/nothing-unwanted-2.png",
+      "images/nothing-unwanted-3.png"
+    ],
+    "image": "images/nothing-unwanted-1.png"
   },
   {
     "id": "soma-platform",

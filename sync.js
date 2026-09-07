@@ -14,10 +14,61 @@ if (!fs.existsSync(projectsJsonPath)) {
 const projects = JSON.parse(fs.readFileSync(projectsJsonPath, 'utf8'));
 console.log(`Loaded ${projects.length} canonical projects from Single Source of Truth.`);
 
+const imagesMapPath = path.join(rootDir, 'project_images_map.json');
+let imagesMap = {};
+if (fs.existsSync(imagesMapPath)) {
+  imagesMap = JSON.parse(fs.readFileSync(imagesMapPath, 'utf8'));
+  console.log(`Loaded image map for ${Object.keys(imagesMap).length} projects.`);
+}
+
+// Attach canonical images to projects
+projects.forEach(p => {
+  if (imagesMap[p.id] && imagesMap[p.id].length > 0) {
+    p.images = imagesMap[p.id];
+    p.image = imagesMap[p.id][0];
+  }
+});
+
 // Mirror projects.json to both repo folders
 fs.writeFileSync(path.join(labsDir, 'projects.json'), JSON.stringify(projects, null, 2), 'utf8');
 fs.writeFileSync(path.join(siteDir, 'projects.json'), JSON.stringify(projects, null, 2), 'utf8');
 
+// Helper to generate Media/Carousel HTML
+function generateMediaHtml(p, isSite = false) {
+  if (!p.images || p.images.length === 0) return '';
+
+  if (p.images.length === 1) {
+    const mediaClass = isSite ? 'project-media' : 'card-media';
+    return `\n            <div class="${mediaClass}">
+              <img src="${p.images[0]}" alt="${p.title} Screenshot Preview" loading="lazy" draggable="false" />
+            </div>`;
+  }
+
+  const carouselClass = isSite ? 'project-carousel' : 'card-carousel';
+  const slidesHtml = p.images.map((img, idx) => `
+                <div class="carousel-slide" data-slide-index="${idx}">
+                  <img src="${img}" alt="${p.title} Screenshot Preview ${idx + 1}" loading="lazy" draggable="false" />
+                </div>`).join('');
+
+  const dotsHtml = p.images.map((_, idx) => `
+                <span class="carousel-dot ${idx === 0 ? 'active' : ''}" data-dot-index="${idx}"></span>`).join('');
+
+  return `\n            <div class="${carouselClass}" data-total="${p.images.length}">
+              <div class="carousel-track">
+                ${slidesHtml}
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                ${dotsHtml}
+              </div>
+              <div class="carousel-badge">1/${p.images.length}</div>
+            </div>`;
+}
 
 // 1. Generate MTLG Labs Cards HTML
 function generateLabsHtml(p) {
@@ -27,6 +78,7 @@ function generateLabsHtml(p) {
                       p.badgeLabs.type === 'ai' ? 'status-ai' : 'status-tool';
 
   const tagsHtml = p.tagsLabs.map(t => `<span class="tag">${t}</span>`).join('\n              ');
+  const mediaHtml = generateMediaHtml(p, false);
   const escapedTitle = p.title.replace(/"/g, '&quot;');
 
   let actions = [];
@@ -80,7 +132,7 @@ function generateLabsHtml(p) {
                 <span class="pulse-dot"></span> ${p.badgeLabs.text}
               </span>
               <span class="cat-pill">${p.catPill}</span>
-            </div>
+            </div>${mediaHtml}
             <div class="card-main">
               <h3 class="product-name">${p.title}</h3>
               <p class="product-desc">${p.desc}</p>
@@ -95,6 +147,7 @@ function generateLabsHtml(p) {
 function generateSiteHtml(p) {
   const badgeClass = p.badgeSite.type === 'live' ? 'live-badge' : 'dev-badge';
   const tagsHtml = p.tagsSite.map(t => `<span class="mini-tag">${t}</span>`).join('\n              ');
+  const mediaHtml = generateMediaHtml(p, true);
   const escapedTitle = p.title.replace(/"/g, '&quot;');
 
   if (p.url) {
@@ -112,7 +165,7 @@ function generateSiteHtml(p) {
                 </button>
                 <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </div>
-            </div>
+            </div>${mediaHtml}
             <p>${p.desc}</p>
             <div class="project-tags">
               ${tagsHtml}
@@ -132,7 +185,7 @@ function generateSiteHtml(p) {
                   <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 </button>
               </div>
-            </div>
+            </div>${mediaHtml}
             <p>${p.desc}</p>
             <div class="project-tags">
               ${tagsHtml}
