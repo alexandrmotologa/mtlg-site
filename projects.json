@@ -68,7 +68,10 @@
     "url": "https://snapframe.store",
     "github": "https://github.com/alexandrmotologa/snapframe.store",
     "images": [
-      "images/snapframe-1.png"
+      "images/snapframe-1.png",
+      "images/snapframe-2.png",
+      "images/snapframe-3.png",
+      "images/snapframe-4.png"
     ],
     "image": "images/snapframe-1.png"
   },
