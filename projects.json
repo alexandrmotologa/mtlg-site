@@ -4,29 +4,40 @@
     "title": "MCP Studio",
     "category": "devtools",
     "badgeLabs": {
-      "text": "In Active Dev",
-      "type": "dev"
+      "text": "Live Desktop Suite",
+      "type": "live"
     },
     "badgeSite": {
-      "text": "In Active Dev",
-      "type": "dev"
+      "text": "Live Desktop Suite",
+      "type": "live"
     },
     "catPill": "AI & Developer Studio",
-    "desc": "The all-in-one desktop IDE & visual inspector for Model Context Protocol (MCP): auto-discovery, interactive tool testing, multi-LLM agent simulator, live JSON-RPC traffic streaming, and 1-click Cursor & Claude export.",
+    "desc": "The definitive desktop IDE, automated testing suite & AI agent simulator for Model Context Protocol (MCP): dynamic schema forms, smart mock auto-filler, multi-LLM arena, live JSON-RPC traffic streaming, and 1-click Cursor & Claude export.",
     "tagsLabs": [
+      "Production App",
       "Electron / React 19",
       "Model Context Protocol",
       "Multi-LLM",
       "DevOps & QA"
     ],
     "tagsSite": [
+      "Production App",
       "Electron / React 19",
       "MCP Protocol",
       "Multi-LLM",
       "Developer Tools"
     ],
-    "url": "https://github.com/alexandrmotologa/mcp-studio",
-    "github": "https://github.com/alexandrmotologa/mcp-studio"
+    "url": "https://mcp.mtlglabs.space",
+    "releases": "https://github.com/alexandrmotologa/mcp-studio/releases",
+    "github": "https://github.com/alexandrmotologa/mcp-studio",
+    "images": [
+      "images/mcp-studio-1.png",
+      "images/mcp-studio-2.png",
+      "images/mcp-studio-3.jpg",
+      "images/mcp-studio-4.png",
+      "images/mcp-studio-5.png"
+    ],
+    "image": "images/mcp-studio-1.png"
   },
   {
     "id": "snapframe",
