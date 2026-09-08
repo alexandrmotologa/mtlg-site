@@ -114,6 +114,81 @@
     "image": "images/mock-api-py-1.png"
   },
   {
+    "id": "sentinel",
+    "title": "Sentinel",
+    "category": "devtools",
+    "badgeLabs": {
+      "text": "Open Source",
+      "type": "oss"
+    },
+    "badgeSite": {
+      "text": "Open Source Daemon",
+      "type": "live"
+    },
+    "catPill": "Uptime & API Health",
+    "desc": "Asynchronous uptime and API health monitoring daemon in Python 3.12. Features concurrent HTTP/TCP socket probes, live TUI terminal dashboard, Prometheus metrics, and multi-channel alerting.",
+    "tagsLabs": [
+      "Python 3.12",
+      "AsyncIO / HTTPX",
+      "Live TUI Dashboard",
+      "Prometheus Metrics",
+      "Multi-Channel Alerts"
+    ],
+    "tagsSite": [
+      "Python 3.12",
+      "Uptime Daemon",
+      "Live TUI",
+      "Prometheus & Alerts"
+    ],
+    "url": "https://github.com/alexandrmotologa/sentinel",
+    "github": "https://github.com/alexandrmotologa/sentinel",
+    "images": [
+      "images/sentinel-1.png",
+      "images/sentinel-2.png",
+      "images/sentinel-3.png",
+      "images/sentinel-4.png"
+    ],
+    "image": "images/sentinel-1.png"
+  },
+  {
+    "id": "hook-trap",
+    "title": "hook-trap",
+    "category": "devtools",
+    "badgeLabs": {
+      "text": "Open Source",
+      "type": "oss"
+    },
+    "badgeSite": {
+      "text": "Open Source Proxy",
+      "type": "live"
+    },
+    "catPill": "Webhook Proxy & Debugger",
+    "desc": "Local webhook inspector, debugger, and forwarding proxy built with FastAPI, WebSockets, and SQLite. Features real-time payload streaming, signature validation, payload diffs, and cURL export.",
+    "tagsLabs": [
+      "FastAPI / WebSockets",
+      "Webhook Debugger",
+      "HMAC Validation",
+      "Payload Diffs",
+      "Public Tunnels"
+    ],
+    "tagsSite": [
+      "FastAPI / WebSockets",
+      "Webhook Inspector",
+      "Signature Validator",
+      "Replay Engine"
+    ],
+    "url": "https://github.com/alexandrmotologa/hook-trap",
+    "github": "https://github.com/alexandrmotologa/hook-trap",
+    "images": [
+      "images/hook-trap-1.png",
+      "images/hook-trap-2.png",
+      "images/hook-trap-3.png",
+      "images/hook-trap-4.png",
+      "images/hook-trap-5.png"
+    ],
+    "image": "images/hook-trap-1.png"
+  },
+  {
     "id": "oneira-web",
     "title": "Oneira Space (Web)",
     "category": "ai",

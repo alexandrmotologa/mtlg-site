@@ -5,6 +5,19 @@
     "images/mock-api-py-3.png",
     "images/mock-api-py-4.png"
   ],
+  "sentinel": [
+    "images/sentinel-1.png",
+    "images/sentinel-2.png",
+    "images/sentinel-3.png",
+    "images/sentinel-4.png"
+  ],
+  "hook-trap": [
+    "images/hook-trap-1.png",
+    "images/hook-trap-2.png",
+    "images/hook-trap-3.png",
+    "images/hook-trap-4.png",
+    "images/hook-trap-5.png"
+  ],
   "snapframe": [
     "images/snapframe-1.png",
     "images/snapframe-2.png",
