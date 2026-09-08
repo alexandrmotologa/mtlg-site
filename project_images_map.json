@@ -1,4 +1,10 @@
 {
+  "mock-api-py": [
+    "images/mock-api-py-1.png",
+    "images/mock-api-py-2.png",
+    "images/mock-api-py-3.png",
+    "images/mock-api-py-4.png"
+  ],
   "snapframe": [
     "images/snapframe-1.png",
     "images/snapframe-2.png",

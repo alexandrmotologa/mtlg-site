@@ -47,12 +47,18 @@ projects.forEach(p => {
   }
 });
 
-// Mirror projects.json to all detected site and labs folders
+// Mirror projects.json and project_images_map.json to all detected site and labs folders
 siteDirs.forEach(dir => {
   fs.writeFileSync(path.join(dir, 'projects.json'), JSON.stringify(projects, null, 2), 'utf8');
+  if (Object.keys(imagesMap).length > 0) {
+    fs.writeFileSync(path.join(dir, 'project_images_map.json'), JSON.stringify(imagesMap, null, 2), 'utf8');
+  }
 });
 labsDirs.forEach(dir => {
   fs.writeFileSync(path.join(dir, 'projects.json'), JSON.stringify(projects, null, 2), 'utf8');
+  if (Object.keys(imagesMap).length > 0) {
+    fs.writeFileSync(path.join(dir, 'project_images_map.json'), JSON.stringify(imagesMap, null, 2), 'utf8');
+  }
 });
 
 // Helper to generate Media/Carousel HTML
@@ -121,6 +127,13 @@ function generateLabsHtml(p) {
   if (p.npm) {
     actions.push(`<a href="${p.npm}" target="_blank" rel="noopener" class="card-action-btn secondary-action" title="View NPM Package">
                 <span>NPM</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>`);
+  }
+
+  if (p.pypi) {
+    actions.push(`<a href="${p.pypi}" target="_blank" rel="noopener" class="card-action-btn secondary-action" title="View PyPI Package">
+                <span>PyPI</span>
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
               </a>`);
   }

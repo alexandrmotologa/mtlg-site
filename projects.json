@@ -76,6 +76,44 @@
     "image": "images/snapframe-1.png"
   },
   {
+    "id": "mock-api-py",
+    "title": "mock-api-py",
+    "category": "devtools",
+    "badgeLabs": {
+      "text": "Open Source",
+      "type": "oss"
+    },
+    "badgeSite": {
+      "text": "Open Source CLI",
+      "type": "live"
+    },
+    "catPill": "REST API & Mock Server",
+    "desc": "FastAPI mock REST engine that serves CRUD routes, OpenAPI docs, and a web admin from a JSON file. Includes chaos testing, synthetic data generation, and TypeScript exports.",
+    "tagsLabs": [
+      "Python / FastAPI",
+      "REST API Mock",
+      "Interactive Swagger",
+      "Chaos Testing",
+      "PyPI Package"
+    ],
+    "tagsSite": [
+      "Python / FastAPI",
+      "REST Mock Server",
+      "Chaos Testing",
+      "PyPI Package"
+    ],
+    "url": "https://github.com/alexandrmotologa/mock-api-py",
+    "github": "https://github.com/alexandrmotologa/mock-api-py",
+    "pypi": "https://pypi.org/project/mock-api-py/",
+    "images": [
+      "images/mock-api-py-1.png",
+      "images/mock-api-py-2.png",
+      "images/mock-api-py-3.png",
+      "images/mock-api-py-4.png"
+    ],
+    "image": "images/mock-api-py-1.png"
+  },
+  {
     "id": "oneira-web",
     "title": "Oneira Space (Web)",
     "category": "ai",
