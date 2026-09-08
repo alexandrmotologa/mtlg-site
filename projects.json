@@ -12,7 +12,7 @@
       "type": "live"
     },
     "catPill": "AI & Developer Studio",
-    "desc": "The definitive desktop IDE, automated testing suite & AI agent simulator for Model Context Protocol (MCP): dynamic schema forms, smart mock auto-filler, multi-LLM arena, live JSON-RPC traffic streaming, and 1-click Cursor & Claude export.",
+    "desc": "Desktop IDE and testing environment for the Model Context Protocol. Includes schema forms, mock data generation, JSON-RPC inspection, and configuration export for Cursor and Claude.",
     "tagsLabs": [
       "Production App",
       "Electron / React 19",
@@ -52,7 +52,7 @@
       "type": "live"
     },
     "catPill": "Micro-SaaS",
-    "desc": "Studio-grade App Store & Google Play screenshot generator powered by AI Vision Auto-Pilot, 3D device frames, video previews, and Fastlane ASO metadata automation.",
+    "desc": "Screenshot generator for App Store and Google Play assets. Includes 3D device frames, video previews, layout suggestions, and Fastlane metadata export.",
     "tagsLabs": [
       "Production SaaS",
       "Three.js",
@@ -88,7 +88,7 @@
       "type": "live"
     },
     "catPill": "AI & Mental Health",
-    "desc": "Full-stack AI emotional sanctuary & symbolic Jungian dream analysis web platform with full mobile browser support and adaptive responsive experience. Built with Next.js 16, React 19, Google Generative AI, Firebase security, clinical CBT tools, and a dedicated practitioner portal.",
+    "desc": "Web platform for dream journaling and reflection. Built with Next.js 16, React 19, and Google Generative AI, with practitioner tools and mobile browser support.",
     "tagsLabs": [
       "Web + Mobile Browser",
       "Next.js 16 / React 19",
@@ -126,7 +126,7 @@
       "type": "live"
     },
     "catPill": "Mobile Well-Being",
-    "desc": "Native Android application for self-discovery, daily mood check-ins, Jungian dream journals, gratitude logging, SOS Grounding exercises, and encrypted zero-retention privacy with Capacitor 8 biometric integration.",
+    "desc": "Android app for mood tracking, journaling, and dream reflection. Built with Capacitor, biometric authentication, and local data encryption.",
     "tagsLabs": [
       "Android / Capacitor 8",
       "Biometrics",
@@ -162,7 +162,7 @@
       "type": "dev"
     },
     "catPill": "Developer Studio",
-    "desc": "All-in-one Developer Studio & Desktop GUI for Bubble.io: automated backups, schema inspection, dead code audit, AI translation, and visual QA testing.",
+    "desc": "Desktop application for Bubble.io workflows. Bundles automated backups, schema inspection, dead code audits, translation, and visual regression tests.",
     "tagsLabs": [
       "Electron",
       "TypeScript",
@@ -203,7 +203,7 @@
       "type": "dev"
     },
     "catPill": "CLI & Automation",
-    "desc": "All-in-one TypeScript CLI for Bubble.io: automated AES-256 encrypted backups, Schema-as-Code generation, local mocking, extensible plugin system with lifecycle hooks, and CI/CD pipelines.",
+    "desc": "TypeScript command-line tool for Bubble.io with encrypted backups, schema export, local API mocking, plugin hooks, and CI/CD automation.",
     "tagsLabs": [
       "TypeScript",
       "AES-256 Backups",
@@ -237,7 +237,7 @@
       "type": "dev"
     },
     "catPill": "AI & Localization",
-    "desc": "Autonomous CLI & Interactive TUI translating entire Bubble.io apps into 108+ languages using 5 LLM providers (OpenAI, Anthropic Claude 3.5 Sonnet, Gemini, OpenRouter, and local Ollama/Llama 3). Built with SQLite translation memory caching, brand glossary protection, and layout pseudo-localization.",
+    "desc": "Command-line and terminal interface for translating Bubble.io applications into multiple languages using cloud and local LLMs. Includes translation memory, glossary locks, and layout checks.",
     "tagsLabs": [
       "108+ Languages",
       "5 LLM Providers",
@@ -273,7 +273,7 @@
       "type": "dev"
     },
     "catPill": "Code Health",
-    "desc": "Dead code detector, dependency analyzer & health scorer for Bubble.io. Scans exported .bubble files for dead workflows, orphaned fields, and unused plugins, outputs a 0-100 Health Score, and includes an interactive dependency graph and VS Code Extension.",
+    "desc": "Analyzer for exported Bubble.io files that finds unused workflows, orphan fields, and inactive plugins, with dependency graphs and a health score.",
     "tagsLabs": [
       "AST & Graph Analysis",
       "Health Score (0-100)",
@@ -308,7 +308,7 @@
       "type": "dev"
     },
     "catPill": "Automated QA",
-    "desc": "Automated visual regression testing & pixel-level diffing utility for Bubble.io. Powered by Playwright + pixelmatch with component-level testing, AWS S3 baseline syncing, smart dynamic masking, and interactive HTML before/after slider comparison reports.",
+    "desc": "Visual regression testing tool for Bubble.io applications. Uses Playwright and pixelmatch for diffing, with dynamic masking and comparison reports.",
     "tagsLabs": [
       "Playwright",
       "Pixelmatch",
@@ -341,7 +341,7 @@
       "type": "live"
     },
     "catPill": "Custom Architectural",
-    "desc": "Custom architectural e-commerce platform for luxury aluminium terrace roofing & cold wintergardens in Germany. Features full online ordering down to individual fittings, dynamic product & material galleries, quotation requests, and Stripe payments.",
+    "desc": "E-commerce platform for aluminum terrace roofing and winter gardens in Germany. Features custom ordering down to individual fittings, material galleries, quotes, and Stripe payments.",
     "tagsLabs": [
       "Bubble.io Full-Stack",
       "E-Commerce & Stripe",
@@ -376,7 +376,7 @@
       "type": "live"
     },
     "catPill": "Web3 & FinTech",
-    "desc": "Gamified quiz & tournament platform with multi-rail fiat/crypto payments (Stripe, BridgerPay, UPI, Solana wallet integration & USDC payouts), automated DOCX/CSV question ingestion, and tokenomics reward architecture.",
+    "desc": "Quiz and tournament platform with fiat and crypto payments, automated question import from DOCX and CSV files, and reward payouts.",
     "tagsLabs": [
       "Bubble.io Full-Stack",
       "Solana Web3",
@@ -412,7 +412,7 @@
       "type": "live"
     },
     "catPill": "No-Code / NFT",
-    "desc": "The #1 rated white-label Web3 & NFT marketplace platform built 100% on Bubble.io (featured by Rarible DAO). Engineered decentralized minting, collection management, Rarible Protocol API integrations, Pinata IPFS metadata, and custom crypto wallet bridges.",
+    "desc": "White-label NFT marketplace built on Bubble.io. Includes minting, collection management, Rarible Protocol integration, IPFS metadata storage, and wallet connections.",
     "tagsLabs": [
       "Bubble.io Full-Stack",
       "Rarible Protocol",
@@ -444,7 +444,7 @@
       "type": "live"
     },
     "catPill": "Telegram & Gaming",
-    "desc": "Official TeleStore Telegram Mini App & bot gaming platform. Engineered with bespoke Telegram OAuth authentication, push notifications, and native Telegram Stars in-app currency payments.",
+    "desc": "Telegram Mini App and bot quiz game with Telegram authentication, push notifications, and Telegram Stars in-app payments.",
     "tagsLabs": [
       "Telegram Mini App",
       "Bubble.io Full-Stack",
@@ -484,7 +484,7 @@
       "type": "live"
     },
     "catPill": "Campus Network",
-    "desc": "Real-time campus social & community discovery platform connecting students across 25+ universities with events, interest groups (coding, esports, wellness), local places, and volunteer or work opportunities.",
+    "desc": "Campus community platform connecting university students with campus events, student groups, local spots, and student work opportunities.",
     "tagsLabs": [
       "Bubble.io Full-Stack",
       "25+ Universities",
@@ -519,7 +519,7 @@
       "type": "live"
     },
     "catPill": "Sustainable Re-Commerce",
-    "desc": "Australian sustainable second-hand book marketplace. Integrated ISBNDB API for automated metadata lookup, multi-seller inventory management, condition grading, live Instagram social feeds, and Stripe payments.",
+    "desc": "Second-hand book marketplace in Australia with ISBN metadata lookups, multi-seller inventory, book condition grading, and Stripe payments.",
     "tagsLabs": [
       "Bubble.io Full-Stack",
       "ISBNDB API",
@@ -553,7 +553,7 @@
       "type": "live"
     },
     "catPill": "Food & Delivery",
-    "desc": "Mobile-first digital menu & food delivery white-label platform for dark kitchens and restaurants. Features item customization, category filtering, Stripe checkout, and a real-time merchant kitchen triage & order management dashboard.",
+    "desc": "Online ordering and digital menu platform for restaurants and delivery kitchens. Includes item customization, Stripe checkout, and live order management for staff.",
     "tagsLabs": [
       "Bubble.io Full-Stack",
       "Food Delivery & Cart",
@@ -587,17 +587,17 @@
       "text": "Live Template",
       "type": "live"
     },
-    "catPill": "Architecture Showcase",
-    "desc": "Visual-first luxury portfolio web application for architecture firms and spatial designers. Features high-res project galleries, structural blueprints & spec sheets, category filtering, and client consultation request pipelines.",
+    "catPill": "Architecture Portfolio",
+    "desc": "Portfolio web application for architecture studios, featuring project galleries, blueprints, spec sheets, and consultation request forms.",
     "tagsLabs": [
       "Bubble.io Full-Stack",
-      "Spatial Showcase",
+      "Spatial Architecture",
       "High-Res Media",
       "Lead Capture"
     ],
     "tagsSite": [
       "Bubble.io Full-Stack",
-      "Spatial Showcase",
+      "Spatial Architecture",
       "High-Res Media",
       "Lead Capture"
     ],
@@ -622,7 +622,7 @@
       "type": "live"
     },
     "catPill": "Digital Agency",
-    "desc": "High-converting portfolio web app for software studios and digital agencies. Includes interactive case study modules, tiered service packages, client reviews, and custom lead generation forms.",
+    "desc": "Agency portfolio web app with case study breakdowns, service tiers, client reviews, and lead intake forms.",
     "tagsLabs": [
       "Bubble.io Full-Stack",
       "Case Studies",
@@ -657,7 +657,7 @@
       "type": "live"
     },
     "catPill": "FinTech & Agri",
-    "desc": "Comprehensive agricultural risk management and FinTech hedging platform. Features real-time CBOT commodity market pricing, crop volatility prediction models, weather event insurance calculations, and Plaid financial integrations.",
+    "desc": "Agricultural risk management platform providing commodity market pricing, crop volatility models, weather insurance estimates, and Plaid bank connections.",
     "tagsLabs": [
       "Bubble.io FinTech",
       "Commodities (CBOT)",
@@ -691,7 +691,7 @@
       "type": "live"
     },
     "catPill": "Web3 Publishing",
-    "desc": "Community-driven Web3 collaborative publishing and storytelling platform. Enables modular world-building elements, character traits, and creative lore assets to be minted, owned, and traded as NFTs so all creators get compensated.",
+    "desc": "Collaborative publishing platform where writers and artists can publish, license, and trade world-building assets and character lore.",
     "tagsLabs": [
       "Bubble.io Web3",
       "NFT Publishing",
@@ -726,7 +726,7 @@
       "type": "live"
     },
     "catPill": "Web3 & Art",
-    "desc": "Digital marketplace & licensing ecosystem for tattoo artists and flash art collectors. Built on Bubble.io with Polygon MATIC Web3 checkout, artist studio portals, custom ink booking requests, and style category curation.",
+    "desc": "Marketplace for tattoo artists and collectors to license flash art, book studio appointments, and process payments on Bubble.io.",
     "tagsLabs": [
       "Bubble.io Full-Stack",
       "Polygon MATIC",
@@ -758,7 +758,7 @@
       "type": "live"
     },
     "catPill": "Prediction Market",
-    "desc": "Polymarket-style decentralized prediction market MVP built end-to-end on Bubble.io. Features real-time probability tracking, interactive odds charts, Yes/No binary outcome betting, and category filters (politics, finance, crypto).",
+    "desc": "Prediction market application built on Bubble.io with probability tracking, odds charts, and binary outcome voting across categories.",
     "tagsLabs": [
       "Bubble.io FinTech",
       "Prediction Markets",
@@ -794,7 +794,7 @@
       "type": "live"
     },
     "catPill": "Smart Shopping",
-    "desc": "Smart grocery barcode scanner & shopping companion. Built with a high-performance Flutter mobile wrapper (Android & iOS) integrated over a Bubble.io backend, featuring multi-retailer inventory lookup and barcode camera scanning.",
+    "desc": "Grocery shopping assistant with barcode scanning. Built with a Flutter mobile app connected to a Bubble.io backend for inventory lookups.",
     "tagsLabs": [
       "Flutter Mobile (iOS/Android)",
       "Bubble.io Backend",
@@ -828,7 +828,7 @@
       "type": "live"
     },
     "catPill": "Accessibility & Audits",
-    "desc": "Mobile-first disability & space accessibility audit platform for field inspectors in Romania (Evaluare Voluntară Accesibilitate Spațiul). Features multi-step compliance evaluations, photo/video evidence uploads, and automated scoring.",
+    "desc": "Accessibility audit tool for field inspectors in Romania. Features multi-step compliance checklists, photo and video uploads, and automated scoring.",
     "tagsLabs": [
       "Bubble.io Full-Stack",
       "Accessibility Audits",
@@ -864,7 +864,7 @@
       "type": "live"
     },
     "catPill": "EdTech & Tutors",
-    "desc": "Interactive language learning and online tutor booking platform. Features audio pronunciation playback, gamified flashcards, tutor discovery with hourly rates, calendar scheduling, and structured study modules.",
+    "desc": "Language learning platform with pronunciation audio, study flashcards, calendar scheduling, and tutor bookings by hourly rate.",
     "tagsLabs": [
       "Bubble.io Full-Stack",
       "Tutor Marketplace",
@@ -897,7 +897,7 @@
       "type": "live"
     },
     "catPill": "Mobile Utility",
-    "desc": "Native Android application built in Kotlin calculating exact import customs taxes, VAT, and duty exemptions for international parcel shipments (Amazon, AliExpress, eBay, iHerb) into the Republic of Moldova.",
+    "desc": "Android app built in Kotlin to calculate customs duties, VAT, and parcel exemptions for shipments into the Republic of Moldova.",
     "tagsLabs": [
       "Android / Kotlin",
       "Tariff Engine",
@@ -925,7 +925,7 @@
       "type": "live"
     },
     "catPill": "Music & Booking",
-    "desc": "Mobile-first artist & venue booking marketplace. Features an integrated persistent background audio player that streams uninterrupted across pages, gig application pipelines, dual-user workflows (Artists & Venues), and Stripe payouts.",
+    "desc": "Booking platform for musicians and venues with persistent audio playback across pages, gig applications, and Stripe payouts.",
     "tagsLabs": [
       "Bubble Mobile (iOS/Android)",
       "Background Audio Engine",
@@ -959,7 +959,7 @@
       "type": "live"
     },
     "catPill": "Biometrics & Health",
-    "desc": "Advanced bioflow analytics and micronutrient metabolic tracking platform for Android. Features integrated biometrics, circadian nutrient cycling algorithms, biomarker dashboards, and secure local health data encryption.",
+    "desc": "Health tracking platform for Android with nutrient logs, biomarker dashboards, biometric integration, and encrypted local storage.",
     "tagsLabs": [
       "Android / Kotlin",
       "Biometrics & Health",
@@ -987,7 +987,7 @@
       "type": "live"
     },
     "catPill": "Productivity & Tooling",
-    "desc": "All-in-one developer & product management toolkit. Originally architected and built end-to-end on Bubble.io by Alexandr Motologa, then successfully migrated, restructured, and scaled using React with Supabase backend.",
+    "desc": "Developer and product planning toolkit. Built originally on Bubble.io and later migrated to React and Supabase.",
     "tagsLabs": [
       "React",
       "Supabase",
@@ -1016,7 +1016,7 @@
       "type": "live"
     },
     "catPill": "Conversational AI",
-    "desc": "AI-powered conversational agent & customer triage automation platform. Features custom multi-turn NLP dialog flows, omnichannel widget embedding, CRM webhooks, and intelligent escalation routing.",
+    "desc": "Customer support chatbot platform with multi-turn dialog flows, embeddable website widgets, CRM webhooks, and agent escalation.",
     "tagsLabs": [
       "AI Chatbots",
       "NLP / LLM",
@@ -1044,7 +1044,7 @@
       "type": "live"
     },
     "catPill": "Enterprise Workflow",
-    "desc": "Custom enterprise workflow and intelligent digital operations platform. Engineered with dynamic role-based permissions, automated document processing, real-time analytics, and modular service extensions.",
+    "desc": "Operations platform with role-based permissions, document processing, operational analytics, and modular service integrations.",
     "tagsLabs": [
       "Full-Stack Architecture",
       "Workflow Automation",
@@ -1072,7 +1072,7 @@
       "type": "live"
     },
     "catPill": "Digital Art & 3D",
-    "desc": "Web3 virtual museum and digital art curation platform. Enables artists and collectors to create 3D exhibition spaces, curate NFT galleries, mint verified certificates, and trade on Ethereum & Polygon.",
+    "desc": "Virtual gallery platform for artists and collectors to arrange 3D exhibitions and display digital collections.",
     "tagsLabs": [
       "Web3 / NFT",
       "Digital Museum",
@@ -1100,7 +1100,7 @@
       "type": "live"
     },
     "catPill": "Localization Engine",
-    "desc": "Cross-border localization, automated multi-lingual content syncing, and global transaction management pipeline with high-throughput API webhooks and distributed edge caching.",
+    "desc": "Content localization pipeline with automated translation syncing, webhook events, and edge caching.",
     "tagsLabs": [
       "Localization Engine",
       "Global Transactions",
@@ -1128,7 +1128,7 @@
       "type": "live"
     },
     "catPill": "Predictive Intelligence",
-    "desc": "Decentralized predictive intelligence and statistical forecasting platform. Combines machine learning probability engines with collective sentiment markets and on-chain verification.",
+    "desc": "Forecasting tool combining statistical probability models with crowd sentiment data.",
     "tagsLabs": [
       "Predictive AI",
       "Forecasting Engine",
@@ -1156,7 +1156,7 @@
       "type": "live"
     },
     "catPill": "Community Quests",
-    "desc": "Gamified Web3 community quest & engagement ecosystem. Features dynamic XP progression trees, smart contract-verified reward distribution, leaderboards, and Discord/Telegram bot synchronization.",
+    "desc": "Community quest platform with reward distribution, XP leaderboards, and Discord and Telegram bot integrations.",
     "tagsLabs": [
       "Web3 Gamification",
       "Community Quests",
@@ -1184,7 +1184,7 @@
       "type": "live"
     },
     "catPill": "DeFi & Trading",
-    "desc": "DeFi & algorithmic trading analytics terminal. Features real-time liquidity pool tracking, volume anomaly alerts, automated DEX order book charts, and multi-wallet portfolio PnL visualization.",
+    "desc": "Trading analytics terminal with liquidity tracking, volume alerts, order book charts, and portfolio performance views.",
     "tagsLabs": [
       "DeFi Analytics",
       "Algorithmic Trading",
@@ -1212,7 +1212,7 @@
       "type": "live"
     },
     "catPill": "Green Web3",
-    "desc": "Green technology and tokenized carbon offset platform. Integrates verified environmental sensor data, transparent carbon credit retirement on-chain, and corporate ESG reporting dashboards.",
+    "desc": "Environmental data dashboard integrating sensor readings, carbon credit tracking, and sustainability reports.",
     "tagsLabs": [
       "Green Web3",
       "Carbon Credits",
@@ -1240,7 +1240,7 @@
       "type": "live"
     },
     "catPill": "Generative Shaders",
-    "desc": "Physics-inspired generative art engine and decentralized creative sandbox. Generates mathematically unique visual particles, real-time shaders, and generative mints stored on IPFS.",
+    "desc": "Generative art tool that creates visual particle simulations and real-time canvas shaders.",
     "tagsLabs": [
       "Generative Art",
       "WebGL / Shaders",
@@ -1268,7 +1268,7 @@
       "type": "live"
     },
     "catPill": "Agent Orchestration",
-    "desc": "High-performance autonomous AI agent orchestration engine. Features task decomposition, tool-calling pipelines, structured memory persistence, and automated code review workflows.",
+    "desc": "AI agent orchestration engine with task breakdown, tool-calling pipelines, memory storage, and code review routines.",
     "tagsLabs": [
       "Agentic AI",
       "Autonomous Workflows",
@@ -1296,7 +1296,7 @@
       "type": "live"
     },
     "catPill": "Web3 Gaming & NFTs",
-    "desc": "Gamified digital pet collectibles and breeding ecosystem. Features interactive on-chain genetics, dynamic evolutionary state updates, NFT pet trading, and mini-game integration.",
+    "desc": "Digital pet collection game with trait inheritance, state updates, and mini-games.",
     "tagsLabs": [
       "Web3 Gaming",
       "NFT Collectibles",
@@ -1324,7 +1324,7 @@
       "type": "live"
     },
     "catPill": "Security & Custody",
-    "desc": "Secure digital asset custody and multi-signature cryptographic vault. Features zero-knowledge access authorization, time-locked transaction approvals, and enterprise audit trails.",
+    "desc": "Digital asset custody platform with multi-signature authorization, time locks, and audit logging.",
     "tagsLabs": [
       "Crypto Custody",
       "Multi-Sig Vault",

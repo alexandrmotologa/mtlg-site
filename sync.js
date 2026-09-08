@@ -1,20 +1,38 @@
 const fs = require('fs');
 const path = require('path');
 
-const rootDir = fs.existsSync(path.join(__dirname, 'mtlg-site')) ? __dirname : path.resolve(__dirname, '..');
-const projectsJsonPath = path.join(rootDir, 'projects.json');
-const labsDir = path.join(rootDir, 'mtlglabs-space');
-const siteDir = path.join(rootDir, 'mtlg-site');
+const rootDir = fs.existsSync(path.join(__dirname, 'projects.json')) && fs.existsSync(path.join(__dirname, 'index.html'))
+  ? __dirname
+  : (fs.existsSync(path.join(__dirname, 'mtlg-site')) ? __dirname : path.resolve(__dirname, '..'));
+
+const projectsJsonPath = fs.existsSync(path.join(__dirname, 'projects.json'))
+  ? path.join(__dirname, 'projects.json')
+  : path.join(rootDir, 'projects.json');
+
+const parentDir = path.resolve(__dirname, '..');
+const siteDirs = [
+  __dirname,
+  path.join(parentDir, 'mtlg-site'),
+  path.join(parentDir, 'mtlg-site-1')
+].filter((d, i, self) => fs.existsSync(path.join(d, 'index.html')) && self.indexOf(d) === i);
+
+const labsDirs = [
+  path.join(parentDir, 'mtlglabs-space'),
+  path.join(parentDir, 'mtlglabs-space-1')
+].filter((d, i, self) => fs.existsSync(path.join(d, 'index.html')) && self.indexOf(d) === i);
 
 if (!fs.existsSync(projectsJsonPath)) {
-  console.error('projects.json not found in root scratch directory!');
+  console.error('projects.json not found!');
   process.exit(1);
 }
 
 const projects = JSON.parse(fs.readFileSync(projectsJsonPath, 'utf8'));
 console.log(`Loaded ${projects.length} canonical projects from Single Source of Truth.`);
 
-const imagesMapPath = path.join(rootDir, 'project_images_map.json');
+const imagesMapPath = fs.existsSync(path.join(__dirname, 'project_images_map.json'))
+  ? path.join(__dirname, 'project_images_map.json')
+  : path.join(rootDir, 'project_images_map.json');
+
 let imagesMap = {};
 if (fs.existsSync(imagesMapPath)) {
   imagesMap = JSON.parse(fs.readFileSync(imagesMapPath, 'utf8'));
@@ -29,9 +47,13 @@ projects.forEach(p => {
   }
 });
 
-// Mirror projects.json to both repo folders
-fs.writeFileSync(path.join(labsDir, 'projects.json'), JSON.stringify(projects, null, 2), 'utf8');
-fs.writeFileSync(path.join(siteDir, 'projects.json'), JSON.stringify(projects, null, 2), 'utf8');
+// Mirror projects.json to all detected site and labs folders
+siteDirs.forEach(dir => {
+  fs.writeFileSync(path.join(dir, 'projects.json'), JSON.stringify(projects, null, 2), 'utf8');
+});
+labsDirs.forEach(dir => {
+  fs.writeFileSync(path.join(dir, 'projects.json'), JSON.stringify(projects, null, 2), 'utf8');
+});
 
 // Helper to generate Media/Carousel HTML
 function generateMediaHtml(p, isSite = false) {
@@ -198,22 +220,33 @@ function generateSiteHtml(p) {
 const labsGridHtml = projects.map(generateLabsHtml).join('\n\n');
 const siteGridHtml = projects.map(generateSiteHtml).join('\n\n');
 
-// Update mtlglabs-space/index.html
-let labsHtml = fs.readFileSync(path.join(labsDir, 'index.html'), 'utf8');
-labsHtml = labsHtml.replace(
-  /<div class="products-grid" id="products-grid">[\s\S]*?<\/div>\s*<\/section>/,
-  `<div class="products-grid" id="products-grid">\n${labsGridHtml}\n        </div>\n      </section>`
-);
-fs.writeFileSync(path.join(labsDir, 'index.html'), labsHtml, 'utf8');
-console.log('✓ Successfully synchronized mtlglabs-space');
+// Update detected mtlglabs-space sites
+labsDirs.forEach(dir => {
+  const htmlPath = path.join(dir, 'index.html');
+  if (fs.existsSync(htmlPath)) {
+    let html = fs.readFileSync(htmlPath, 'utf8');
+    html = html.replace(
+      /<div class="products-grid" id="products-grid">[\s\S]*?<\/div>\s*<\/section>/,
+      `<div class="products-grid" id="products-grid">\n${labsGridHtml}\n        </div>\n      </section>`
+    );
+    fs.writeFileSync(htmlPath, html, 'utf8');
+    console.log(`✓ Successfully synchronized ${path.basename(dir)}`);
+  }
+});
 
-// Update mtlg-site/index.html
-let siteHtml = fs.readFileSync(path.join(siteDir, 'index.html'), 'utf8');
-siteHtml = siteHtml.replace(
-  /<div class="projects-grid">[\s\S]*?<\/div>\s*<\/section>/,
-  `<div class="projects-grid">\n${siteGridHtml}\n        </div>\n      </section>`
-);
-fs.writeFileSync(path.join(siteDir, 'index.html'), siteHtml, 'utf8');
-console.log('✓ Successfully synchronized mtlg-site');
+// Update detected mtlg-site sites
+siteDirs.forEach(dir => {
+  const htmlPath = path.join(dir, 'index.html');
+  if (fs.existsSync(htmlPath)) {
+    let html = fs.readFileSync(htmlPath, 'utf8');
+    html = html.replace(
+      /<div class="projects-grid">[\s\S]*?<\/div>\s*<\/section>/,
+      `<div class="projects-grid">\n${siteGridHtml}\n        </div>\n      </section>`
+    );
+    fs.writeFileSync(htmlPath, html, 'utf8');
+    console.log(`✓ Successfully synchronized ${path.basename(dir)}`);
+  }
+});
 
 console.log('--- ALL SITES SYNCHRONIZED ---');
+
