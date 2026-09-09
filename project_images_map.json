@@ -163,8 +163,11 @@
   "mcp-studio": [
     "images/mcp-studio-1.png",
     "images/mcp-studio-2.png",
-    "images/mcp-studio-3.jpg",
     "images/mcp-studio-4.png",
     "images/mcp-studio-5.png"
+  ],
+  "one2all": [
+    "images/one2all-1.webp",
+    "images/one2all-2.webp"
   ]
 }

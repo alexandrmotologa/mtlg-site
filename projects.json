@@ -1,79 +1,40 @@
 [
   {
-    "id": "mcp-studio",
-    "title": "MCP Studio",
+    "id": "event-driven-order-engine",
+    "title": "Event-Driven Order Engine",
     "category": "devtools",
     "badgeLabs": {
-      "text": "Live Desktop Suite",
-      "type": "live"
+      "text": "Open Source",
+      "type": "oss"
     },
     "badgeSite": {
-      "text": "Live Desktop Suite",
+      "text": "Distributed Engine",
       "type": "live"
     },
-    "catPill": "AI & Developer Studio",
-    "desc": "Desktop IDE and testing environment for the Model Context Protocol. Includes schema forms, mock data generation, JSON-RPC inspection, and configuration export for Cursor and Claude.",
+    "catPill": "Distributed Sagas & Kafka",
+    "desc": "Enterprise distributed order workflow engine built with Java 21 LTS & Spring Boot 3.3+. Features strict Hexagonal Architecture (DDD), Transactional Outbox pattern, Saga Orchestration with compensating rollback, Event Sourcing, and Kubernetes KEDA Kafka lag autoscaling.",
     "tagsLabs": [
-      "Production App",
-      "Electron / React 19",
-      "Model Context Protocol",
-      "Multi-LLM",
-      "DevOps & QA"
+      "Java 21 LTS",
+      "Spring Boot 3.3",
+      "Apache Kafka",
+      "Kubernetes / KEDA",
+      "Hexagonal Architecture",
+      "Distributed Sagas"
     ],
     "tagsSite": [
-      "Production App",
-      "Electron / React 19",
-      "MCP Protocol",
-      "Multi-LLM",
-      "Developer Tools"
+      "Java 21 LTS",
+      "Spring Boot 3.3",
+      "Apache Kafka",
+      "Distributed Sagas",
+      "Hexagonal / DDD"
     ],
-    "url": "https://mcp.mtlglabs.space",
-    "releases": "https://github.com/alexandrmotologa/mcp-studio/releases",
-    "github": "https://github.com/alexandrmotologa/mcp-studio",
+    "url": "https://github.com/alexandrmotologa/event-driven-order-engine",
+    "github": "https://github.com/alexandrmotologa/event-driven-order-engine",
     "images": [
-      "images/mcp-studio-1.png",
-      "images/mcp-studio-2.png",
-      "images/mcp-studio-3.jpg",
-      "images/mcp-studio-4.png",
-      "images/mcp-studio-5.png"
+      "images/event-driven-order-engine-1.png",
+      "images/event-driven-order-engine-2.png"
     ],
-    "image": "images/mcp-studio-1.png"
-  },
-  {
-    "id": "snapframe",
-    "title": "SnapFrame.store",
-    "category": "saas",
-    "badgeLabs": {
-      "text": "Live SaaS",
-      "type": "live"
-    },
-    "badgeSite": {
-      "text": "Live Production SaaS",
-      "type": "live"
-    },
-    "catPill": "Micro-SaaS",
-    "desc": "Screenshot generator for App Store and Google Play assets. Includes 3D device frames, video previews, layout suggestions, and Fastlane metadata export.",
-    "tagsLabs": [
-      "Production SaaS",
-      "Three.js",
-      "AI Vision",
-      "ASO Suite"
-    ],
-    "tagsSite": [
-      "Production SaaS",
-      "Canvas / 3D",
-      "AI Vision",
-      "ASO Suite"
-    ],
-    "url": "https://snapframe.store",
-    "github": "https://github.com/alexandrmotologa/snapframe.store",
-    "images": [
-      "images/snapframe-1.png",
-      "images/snapframe-2.png",
-      "images/snapframe-3.png",
-      "images/snapframe-4.png"
-    ],
-    "image": "images/snapframe-1.png"
+    "image": "images/event-driven-order-engine-1.png"
   },
   {
     "id": "mock-api-py",
@@ -112,6 +73,45 @@
       "images/mock-api-py-4.png"
     ],
     "image": "images/mock-api-py-1.png"
+  },
+  {
+    "id": "mcp-studio",
+    "title": "MCP Studio",
+    "category": "devtools",
+    "badgeLabs": {
+      "text": "Live Desktop Suite",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Desktop Suite",
+      "type": "live"
+    },
+    "catPill": "AI & Developer Studio",
+    "desc": "Desktop IDE and testing environment for the Model Context Protocol. Includes schema forms, mock data generation, JSON-RPC inspection, and configuration export for Cursor and Claude.",
+    "tagsLabs": [
+      "Production App",
+      "Electron / React 19",
+      "Model Context Protocol",
+      "Multi-LLM",
+      "DevOps & QA"
+    ],
+    "tagsSite": [
+      "Production App",
+      "Electron / React 19",
+      "MCP Protocol",
+      "Multi-LLM",
+      "Developer Tools"
+    ],
+    "url": "https://mcp.mtlglabs.space",
+    "releases": "https://github.com/alexandrmotologa/mcp-studio/releases",
+    "github": "https://github.com/alexandrmotologa/mcp-studio",
+    "images": [
+      "images/mcp-studio-1.png",
+      "images/mcp-studio-2.png",
+      "images/mcp-studio-4.png",
+      "images/mcp-studio-5.png"
+    ],
+    "image": "images/mcp-studio-1.png"
   },
   {
     "id": "sentinel",
@@ -189,41 +189,40 @@
     "image": "images/hook-trap-1.png"
   },
   {
-    "id": "event-driven-order-engine",
-    "title": "Event-Driven Order Engine",
-    "category": "devtools",
+    "id": "snapframe",
+    "title": "SnapFrame.store",
+    "category": "saas",
     "badgeLabs": {
-      "text": "Open Source",
-      "type": "oss"
-    },
-    "badgeSite": {
-      "text": "Distributed Engine",
+      "text": "Live SaaS",
       "type": "live"
     },
-    "catPill": "Distributed Sagas & Kafka",
-    "desc": "Enterprise distributed order workflow engine built with Java 21 LTS & Spring Boot 3.3+. Features strict Hexagonal Architecture (DDD), Transactional Outbox pattern, Saga Orchestration with compensating rollback, Event Sourcing, and Kubernetes KEDA Kafka lag autoscaling.",
+    "badgeSite": {
+      "text": "Live Production SaaS",
+      "type": "live"
+    },
+    "catPill": "Micro-SaaS",
+    "desc": "Screenshot generator for App Store and Google Play assets. Includes 3D device frames, video previews, layout suggestions, and Fastlane metadata export.",
     "tagsLabs": [
-      "Java 21 LTS",
-      "Spring Boot 3.3",
-      "Apache Kafka",
-      "Kubernetes / KEDA",
-      "Hexagonal Architecture",
-      "Distributed Sagas"
+      "Production SaaS",
+      "Three.js",
+      "AI Vision",
+      "ASO Suite"
     ],
     "tagsSite": [
-      "Java 21 LTS",
-      "Spring Boot 3.3",
-      "Apache Kafka",
-      "Distributed Sagas",
-      "Hexagonal / DDD"
+      "Production SaaS",
+      "Canvas / 3D",
+      "AI Vision",
+      "ASO Suite"
     ],
-    "url": "https://github.com/alexandrmotologa/event-driven-order-engine",
-    "github": "https://github.com/alexandrmotologa/event-driven-order-engine",
+    "url": "https://snapframe.store",
+    "github": "https://github.com/alexandrmotologa/snapframe.store",
     "images": [
-      "images/event-driven-order-engine-1.png",
-      "images/event-driven-order-engine-2.png"
+      "images/snapframe-1.png",
+      "images/snapframe-2.png",
+      "images/snapframe-3.png",
+      "images/snapframe-4.png"
     ],
-    "image": "images/event-driven-order-engine-1.png"
+    "image": "images/snapframe-1.png"
   },
   {
     "id": "oneira-web",
@@ -579,7 +578,12 @@
     "extraLink": {
       "label": "Rarible DAO",
       "url": "https://medium.com/rarible-dao/how-to-build-the-anti-opensea-why-no-code-is-the-future-of-nft-markets-6b8b9976b285"
-    }
+    },
+    "images": [
+      "images/one2all-1.webp",
+      "images/one2all-2.webp"
+    ],
+    "image": "images/one2all-1.webp"
   },
   {
     "id": "telequiz",
