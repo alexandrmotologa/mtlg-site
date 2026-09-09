@@ -189,6 +189,43 @@
     "image": "images/hook-trap-1.png"
   },
   {
+    "id": "event-driven-order-engine",
+    "title": "Event-Driven Order Engine",
+    "category": "devtools",
+    "badgeLabs": {
+      "text": "Open Source",
+      "type": "oss"
+    },
+    "badgeSite": {
+      "text": "Distributed Engine",
+      "type": "live"
+    },
+    "catPill": "Distributed Sagas & Kafka",
+    "desc": "Enterprise distributed order workflow engine built with Java 21 LTS & Spring Boot 3.3+. Features strict Hexagonal Architecture (DDD), Transactional Outbox pattern, Saga Orchestration with compensating rollback, Event Sourcing, and Kubernetes KEDA Kafka lag autoscaling.",
+    "tagsLabs": [
+      "Java 21 LTS",
+      "Spring Boot 3.3",
+      "Apache Kafka",
+      "Kubernetes / KEDA",
+      "Hexagonal Architecture",
+      "Distributed Sagas"
+    ],
+    "tagsSite": [
+      "Java 21 LTS",
+      "Spring Boot 3.3",
+      "Apache Kafka",
+      "Distributed Sagas",
+      "Hexagonal / DDD"
+    ],
+    "url": "https://github.com/alexandrmotologa/event-driven-order-engine",
+    "github": "https://github.com/alexandrmotologa/event-driven-order-engine",
+    "images": [
+      "images/event-driven-order-engine-1.png",
+      "images/event-driven-order-engine-2.png"
+    ],
+    "image": "images/event-driven-order-engine-1.png"
+  },
+  {
     "id": "oneira-web",
     "title": "Oneira Space (Web)",
     "category": "ai",

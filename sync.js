@@ -9,17 +9,16 @@ const projectsJsonPath = fs.existsSync(path.join(__dirname, 'projects.json'))
   ? path.join(__dirname, 'projects.json')
   : path.join(rootDir, 'projects.json');
 
-const parentDir = path.resolve(__dirname, '..');
-const siteDirs = [
+const candidateDirs = [
   __dirname,
-  path.join(parentDir, 'mtlg-site'),
-  path.join(parentDir, 'mtlg-site-1')
-].filter((d, i, self) => fs.existsSync(path.join(d, 'index.html')) && self.indexOf(d) === i);
+  path.join(__dirname, 'mtlg-site'),
+  path.join(__dirname, 'mtlglabs-space'),
+  path.join(__dirname, '..', 'mtlg-site'),
+  path.join(__dirname, '..', 'mtlglabs-space')
+].map(d => path.resolve(d));
 
-const labsDirs = [
-  path.join(parentDir, 'mtlglabs-space'),
-  path.join(parentDir, 'mtlglabs-space-1')
-].filter((d, i, self) => fs.existsSync(path.join(d, 'index.html')) && self.indexOf(d) === i);
+const siteDirs = candidateDirs.filter((d, i, arr) => arr.indexOf(d) === i && fs.existsSync(path.join(d, 'index.html')) && path.basename(d).includes('mtlg-site'));
+const labsDirs = candidateDirs.filter((d, i, arr) => arr.indexOf(d) === i && fs.existsSync(path.join(d, 'index.html')) && path.basename(d).includes('mtlglabs-space'));
 
 if (!fs.existsSync(projectsJsonPath)) {
   console.error('projects.json not found!');

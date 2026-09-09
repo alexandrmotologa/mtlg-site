@@ -18,6 +18,10 @@
     "images/hook-trap-4.png",
     "images/hook-trap-5.png"
   ],
+  "event-driven-order-engine": [
+    "images/event-driven-order-engine-1.png",
+    "images/event-driven-order-engine-2.png"
+  ],
   "snapframe": [
     "images/snapframe-1.png",
     "images/snapframe-2.png",
