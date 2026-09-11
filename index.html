@@ -851,13 +851,13 @@ body {
   background: rgba(255, 255, 255, 0.05);
 }
 
-.github-color { color: #f8fafc; }
-.upwork-color { color: #4ade80; }
-.fiverr-color { color: #1dbf73; }
-.email-color { color: #38bdf8; }
-.bmc-color { color: #fde047; }
-.play-color { color: #34d399; }
-.linkedin-color { color: #60a5fa; }
+.github-color   { color: #f8fafc; background: rgba(248, 250, 252, 0.08); }
+.upwork-color   { color: #4ade80; background: rgba(74, 222, 128, 0.1); }
+.fiverr-color   { color: #1dbf73; background: rgba(29, 191, 115, 0.1); }
+.email-color    { color: #38bdf8; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.2); }
+.bmc-color      { color: #fde047; background: rgba(253, 224, 71, 0.1); }
+.play-color     { color: #34d399; background: rgba(52, 211, 153, 0.1); }
+.linkedin-color { color: #60a5fa; background: rgba(96, 165, 250, 0.1); }
 
 .contact-details h4 {
   font-size: 0.95rem;
@@ -868,6 +868,33 @@ body {
 .contact-details p {
   font-size: 0.82rem;
   color: var(--text-muted);
+}
+
+/* Direct Contact: email links readable on dark bg */
+.contact-emails-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-top: 0.1rem;
+}
+
+.email-link-item {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.email-link-item:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.email-dot-sep {
+  color: #475569;
+  font-size: 0.7rem;
 }
 
 .contact-arrow {
