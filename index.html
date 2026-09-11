@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
@@ -844,20 +844,37 @@ body {
 .contact-icon {
   width: 44px;
   height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  max-width: 44px;
+  max-height: 44px;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.05);
+  box-sizing: border-box;
+}
+
+.contact-icon svg {
+  flex-shrink: 0;
 }
 
 .github-color   { color: #f8fafc; background: rgba(248, 250, 252, 0.08); }
 .upwork-color   { color: #4ade80; background: rgba(74, 222, 128, 0.1); }
 .fiverr-color   { color: #1dbf73; background: rgba(29, 191, 115, 0.1); }
-.email-color    { color: #38bdf8; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.2); }
+.email-color    { color: #38bdf8; background: rgba(56, 189, 248, 0.12); }
 .bmc-color      { color: #fde047; background: rgba(253, 224, 71, 0.1); }
 .play-color     { color: #34d399; background: rgba(52, 211, 153, 0.1); }
 .linkedin-color { color: #60a5fa; background: rgba(96, 165, 250, 0.1); }
+.npm-color      { color: #f87171; background: rgba(248, 113, 113, 0.1); }
+
+.contact-details {
+  min-width: 0;
+  flex: 1;
+}
 
 .contact-details h4 {
   font-size: 0.95rem;
@@ -873,10 +890,9 @@ body {
 /* Direct Contact: email links readable on dark bg */
 .contact-emails-inline {
   display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  flex-wrap: wrap;
-  margin-top: 0.1rem;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-top: 0.2rem;
 }
 
 .email-link-item {
@@ -884,6 +900,7 @@ body {
   color: #94a3b8;
   text-decoration: none;
   transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
 .email-link-item:hover {
@@ -893,8 +910,7 @@ body {
 }
 
 .email-dot-sep {
-  color: #475569;
-  font-size: 0.7rem;
+  display: none;
 }
 
 .contact-arrow {
@@ -902,6 +918,7 @@ body {
   font-size: 1.1rem;
   color: var(--text-muted);
   transition: transform 0.2s ease;
+  flex-shrink: 0;
 }
 
 .contact-card:hover .contact-arrow {
